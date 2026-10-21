@@ -212,6 +212,12 @@ Before accepting an asset, verify:
 [SOURCE_OF_TRUTH.md](SOURCE_OF_TRUTH.md) defines the game's purpose, systems, boundaries, and implementation priorities. This document governs visual execution. If a visual choice harms readability, accessibility, or core interaction, preserve gameplay clarity and adapt the art treatment.
 
 
+## 15. Duckling Helper character treatment
+
+Duckling Helpers should read as baby ducks at a glance, not as smaller copies of the adult rubber duck. Use an oversized round head, a compact little body, a short forward-facing orange bill, a single clear eye, tiny feet, and a small feather tuft. Keep the warm yellow highlights, golden shadows, and dark brown pixel outline consistent with the reference sheet. The same baby-duck design should be used for the producer-card icon and the in-scene walking helpers so the UI and world feel connected.
+
+In the first playable implementation, each purchased Duckling Helper appears in the pond scene and waddles within the grassy play area. Movement is gentle and low-key, remains behind the main clickable duck, and must not block taps or controls. The current sprite is inline SVG pixel-style art; compare it against the reference sheet during the next visual review.
+
 ## 15. Generated asset-sheet references
 
 The generated Ducky Clicker concept sheet establishes a shared visual direction for future art production. Treat it as a **style and content reference**, not as a finished sprite atlas ready to slice directly into the game.
