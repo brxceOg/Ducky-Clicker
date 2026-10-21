@@ -21,17 +21,33 @@ const helperPriceDisplay = document.querySelector("#helper-price");
 const buyHelperButton = document.querySelector("#buy-helper");
 const purchaseFeedback = document.querySelector("#purchase-feedback");
 const producerPanel = document.querySelector(".producer-panel");
+const walkingDucklingsLayer = document.querySelector("#walking-ducklings");
 
 if (
   !duckButton || !countDisplay || !tapPowerDisplay || !productionRateDisplay
   || !effectsLayer || !scene || !helperOwnedDisplay || !helperPriceDisplay
-  || !buyHelperButton || !purchaseFeedback || !producerPanel
+  || !buyHelperButton || !purchaseFeedback || !producerPanel || !walkingDucklingsLayer
 ) {
   throw new Error("Ducky Clicker could not start because a required game element is missing.");
 }
 
 let lastPurchaseMessage = "";
 let lastProductionTick = performance.now();
+const walkingDucklings = [];
+
+const DUCKLING_SPRITE = `
+  <svg viewBox="0 0 40 34" shape-rendering="crispEdges" focusable="false">
+    <path d="M5 22h2v-3h3v-2h5v2h5v2h4v4h-3v3H9v-2H6v-2H5z" fill="#71472c"/>
+    <path d="M7 22h2v-2h5v2h5v2h3v2h-3v2H10v-2H7v-2z" fill="#efbd32"/>
+    <path d="M12 18v-4h2V9h3V6h7V5h5v3h3v5h2v5h-3v4H19v-2h-4v-2z" fill="#71472c"/>
+    <path d="M14 17v-4h2V9h3V7h6v1h4v3h2v5h-2v3H20v-2h-4v-2z" fill="#ffe06a"/>
+    <path d="M17 7h2V4h2v3h2V3h2v4h3v2H17z" fill="#efbd32"/>
+    <path d="M29 12h4v1h3v3h-3v1h-4v-2h-1v-2h1z" fill="#ff9e46"/>
+    <rect x="25" y="10" width="2" height="3" fill="#71472c"/>
+    <rect x="25" y="10" width="1" height="1" fill="#fffdf2"/>
+    <path d="M10 27h4v2h-1v2H9v-2h1zM18 27h4v2h2v2h-6v-2z" fill="#f39b42" stroke="#71472c" stroke-width=".7"/>
+    <path d="M16 19h4v1h3v2h-5v-1h-2z" fill="#fff0a8"/>
+  </svg>`;
 
 function render() {
   const price = getDucklingHelperCost(state.ducklingHelpers);
@@ -86,6 +102,68 @@ function spawnSparkle() {
   sparkle.addEventListener("animationend", () => sparkle.remove(), { once: true });
 }
 
+function spawnWalkingDuckling() {
+  const bounds = scene.getBoundingClientRect();
+  const sprite = document.createElement("div");
+  sprite.className = "walking-duckling";
+  sprite.innerHTML = DUCKLING_SPRITE;
+
+  // Helpers enter near the main duck, then wander around the grassy pond scene.
+  const duckling = {
+    element: sprite,
+    x: bounds.width * (0.38 + Math.random() * 0.24),
+    y: bounds.height * (0.55 + Math.random() * 0.17),
+    vx: (Math.random() < 0.5 ? -1 : 1) * (18 + Math.random() * 14),
+    vy: (Math.random() < 0.5 ? -1 : 1) * (5 + Math.random() * 8),
+    turnIn: 1.2 + Math.random() * 2.2,
+  };
+
+  walkingDucklingsLayer.append(sprite);
+  walkingDucklings.push(duckling);
+  positionWalkingDuckling(duckling);
+}
+
+function positionWalkingDuckling(duckling) {
+  duckling.element.style.left = `${duckling.x}px`;
+  duckling.element.style.top = `${duckling.y}px`;
+  duckling.element.style.transform =
+    `translate(-50%, -50%) scaleX(${duckling.vx < 0 ? "-1" : "1"})`;
+}
+
+function moveWalkingDucklings(elapsedSeconds) {
+  if (walkingDucklings.length === 0) return;
+
+  const bounds = scene.getBoundingClientRect();
+  const minX = 22;
+  const maxX = Math.max(minX, bounds.width - 22);
+  const minY = bounds.height * 0.46;
+  const maxY = Math.max(minY, bounds.height - 43);
+  const dt = Math.min(elapsedSeconds, 0.05);
+
+  for (const duckling of walkingDucklings) {
+    duckling.turnIn -= dt;
+    if (duckling.turnIn <= 0) {
+      duckling.vx = (Math.random() < 0.5 ? -1 : 1) * (18 + Math.random() * 14);
+      duckling.vy = (Math.random() < 0.5 ? -1 : 1) * (5 + Math.random() * 8);
+      duckling.turnIn = 1.2 + Math.random() * 2.2;
+    }
+
+    duckling.x += duckling.vx * dt;
+    duckling.y += duckling.vy * dt;
+
+    if (duckling.x < minX || duckling.x > maxX) {
+      duckling.x = Math.min(maxX, Math.max(minX, duckling.x));
+      duckling.vx *= -1;
+    }
+    if (duckling.y < minY || duckling.y > maxY) {
+      duckling.y = Math.min(maxY, Math.max(minY, duckling.y));
+      duckling.vy *= -1;
+    }
+
+    positionWalkingDuckling(duckling);
+  }
+}
+
 duckButton.addEventListener("click", () => {
   Object.assign(state, earnQuackPoints(state));
   lastPurchaseMessage = "";
@@ -106,7 +184,8 @@ buyHelperButton.addEventListener("click", () => {
   if (nextState === state) return;
 
   Object.assign(state, nextState);
-  lastPurchaseMessage = `Hired! Your ${formatCount(state.ducklingHelpers)} Duckling Helper${state.ducklingHelpers === 1 ? "" : "s"} now generate ${formatCount(getProductionPerSecond(state))} Quack Point${getProductionPerSecond(state) === 1 ? "" : "s"} per second. Spent ${formatCount(paidPrice)} points.`;
+  spawnWalkingDuckling();
+  lastPurchaseMessage = `Hired! Your ${formatCount(state.ducklingHelpers)} Duckling Helper${state.ducklingHelpers === 1 ? "" : "s"} now generate ${formatCount(getProductionPerSecond(state))} Quack Point${getProductionPerSecond(state) === 1 ? "" : "s"} per second. A baby duckling waddles into the pond! Spent ${formatCount(paidPrice)} points.`;
   purchaseFeedback.textContent = lastPurchaseMessage;
   purchaseFeedback.classList.add("is-success");
   producerPanel.classList.remove("has-purchase");
@@ -129,6 +208,7 @@ producerPanel.addEventListener("animationend", (event) => {
 function productionLoop(now) {
   const elapsedSeconds = Math.max(0, (now - lastProductionTick) / 1000);
   lastProductionTick = now;
+  moveWalkingDucklings(elapsedSeconds);
   if (state.ducklingHelpers > 0 && elapsedSeconds > 0) {
     Object.assign(state, accrueProduction(state, elapsedSeconds));
     render();
