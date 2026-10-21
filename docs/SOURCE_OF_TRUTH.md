@@ -99,9 +99,9 @@ Do not build all systems at once. Keep each implementation layer playable.
 The game platform is confirmed: **browser game, playable on iPhone**. Repository inspection on 2026-10-21 found no existing application entry point, package manifest, or framework; the repository initially contained the planning documents and art reference only. The first foundation therefore uses **dependency-free HTML, CSS, and native JavaScript ES modules**, with no bundler or framework.
 
 Current implementation structure:
-- `index.html` — accessible page structure and inline SVG main duck.
+- `index.html` — accessible page structure, inline SVG main duck, baby-duck producer icon, and pond walker layer.
 - `styles.css` — responsive pixel-inspired presentation, touch-friendly interaction, and reduced-motion support.
-- `src/main.js` — DOM interaction, rendering, and tap feedback.
+- `src/main.js` — DOM interaction, rendering, tap feedback, per-purchase duckling spawning, and bounded pond wandering.
 - `src/game-state.js` — pure state, tapping, Duckling Helper cost/affordability/purchase, passive production, and number-formatting logic.
 - `tests/game-state.test.js` — Node's built-in test runner for click rewards, producer economy, and production accumulation.
 - `package.json` — `npm test` and a local static server command (`npm start`, requiring Python 3).
@@ -158,7 +158,7 @@ Avoid duplicated economy calculations, scattered magic numbers, tightly coupled 
 Confirm the stack and entry point; establish structure and pixel-art presentation; create a responsive shell and clickable duck; keep this repository independent. **Foundation implemented; browser/device verification still required.**
 
 ### Milestone 2 — Playable clicker
-Add primary currency, click rewards, producers, upgrades, purchase feedback, production-per-second display, and a small balanced starter catalog. **Initial slice implemented:** one Duckling Helper costs 10 Quack Points, produces 1 Quack Point/second, and each subsequent helper costs 15% more (rounded up). Purchase, affordability, owned count, and fractional passive accrual are connected to game state. More upgrades and balancing remain.
+Add primary currency, click rewards, producers, upgrades, purchase feedback, production-per-second display, and a small balanced starter catalog. **Initial slice implemented:** one Duckling Helper costs 10 Quack Points, produces 1 Quack Point/second, and each subsequent helper costs 15% more (rounded up). Purchase, affordability, owned count, and fractional passive accrual are connected to game state. Every purchase also spawns one baby duckling that waddles around the pond scene. More upgrades and balancing remain.
 
 ### Milestone 3 — Persistence
 Add automatic save/load, save versioning, offline earnings, and reload testing.
@@ -199,6 +199,7 @@ A feature is not done merely because code was written. Verify that it matches th
 - **2026-10-21:** Platform confirmed as a browser game playable on iPhone; mobile Safari support is a first-class requirement.
 - **2026-10-21:** Implementation rule: finish included code without silent placeholders; after milestone commits, provide and verify a direct playable testing link.
 - **2026-10-21:** First producer is Duckling Helper: base price 10 Quack Points, +1 Quack Point/second, and 1.15x price growth per owned helper (rounded up). This is the starter economy and may be rebalanced after playtesting.
+- **2026-10-21:** Duckling Helpers use a distinct baby-duck design and each successful purchase adds one matching waddling character to the pond scene. The walkers stay within the scene and do not intercept taps.
 - **2026-10-21:** Repository inspected; no prior app/framework existed. Began the foundation with native HTML/CSS/JavaScript ES modules and Node's built-in test runner; this is the initial stack, not a permanent lock-in.
 - **Pending:** Finalize public-facing in-game title and canonical lore names.
 
