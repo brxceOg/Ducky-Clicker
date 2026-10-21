@@ -603,7 +603,7 @@ h1 span { color: #d18a31; }
 /* Baby Duckling Helpers wandering around the pond */
 .walking-ducklings {
   position: absolute;
-  z-index: 3;
+  z-index: 6;
   inset: 0;
   overflow: hidden;
   pointer-events: none;
@@ -618,6 +618,15 @@ h1 span { color: #d18a31; }
   transform-origin: center;
   will-change: left, top, transform;
   filter: drop-shadow(0 2px 0 rgba(91, 68, 37, .12));
+  scale: 1;
+}
+.walking-duckling.is-spawning {
+  animation: duckling-spawn .38s cubic-bezier(.2, .8, .2, 1) both;
+}
+@keyframes duckling-spawn {
+  0% { opacity: 0; scale: .35; }
+  70% { opacity: 1; scale: 1.18; }
+  100% { opacity: 1; scale: 1; }
 }
 .walking-duckling svg {
   display: block;
