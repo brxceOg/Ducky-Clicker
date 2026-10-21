@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#f8f0d8" />
     <meta name="description" content="A tiny rubber duck. A suspiciously big future. Start your Ducky Clicker empire." />
     <title>Ducky Clicker</title>
-    <link rel="stylesheet" href="./styles.css?v=20261021-26" />
+    <link rel="stylesheet" href="./styles.css?v=20261021-27" />
     <script type="module" src="./src/main.js?v=20261021-21"></script>
   </head>
   <body>
@@ -108,6 +108,14 @@
 <!-- flowers and small ground details live in the outer meadow -->
 <path d="M56 292H64V284H72V292H80V300H72V308H64V300H56Z" fill="#2a453b"/><rect x="64" y="288" width="8" height="12" fill="#fff0a0"/><rect x="60" y="292" width="16" height="4" fill="#fff0a0"/><rect x="68" y="292" width="4" height="4" fill="#e97979"/>
 <path d="M520 260H528V252H536V260H544V268H536V276H528V268H520Z" fill="#2a453b"/><rect x="528" y="256" width="8" height="12" fill="#fff0a0"/><rect x="524" y="260" width="16" height="4" fill="#fff0a0"/><rect x="532" y="260" width="4" height="4" fill="#e97979"/>
+
+<!-- Final perimeter pass: outlines are drawn last so fills/reflections cannot erase border pixels. -->
+<g fill="none" stroke="#222222" stroke-width="2" stroke-linejoin="miter" stroke-linecap="square" vector-effect="non-scaling-stroke">
+  <path aria-label="Cloud outline" d="M48 72H60V60H72V52H100V60H112V68H124V80H112V84H60V80H48Z"/>
+  <path aria-label="Cloud outline" d="M400 88H412V76H424V68H448V76H460V84H472V96H460V100H412V96H400Z"/>
+  <path aria-label="Sun outline" d="M524 24H560V32H572V44H580V72H572V84H560V92H524V84H512V72H504V44H512V32H524Z"/>
+  <path aria-label="Outer pond shore outline" d="M108 276H132V260H160V248H192V236H232V228H272V236H312V228H352V236H388V244H420V256H444V272H460V292H468V320H460V344H444V360H420V376H384V388H336V396H280V388H240V380H208V364H180V344H160V324H148V300H132V284H108Z"/>
+</g>
 </svg>
           <div class="walking-ducklings" id="walking-ducklings" aria-hidden="true"></div>
           <button class="duck-button" id="duck-button" type="button" aria-label="Tap the rubber duck to earn one Quack Point">
