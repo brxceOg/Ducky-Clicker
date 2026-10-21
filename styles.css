@@ -840,81 +840,102 @@ h1 span { color: #d18a31; }
 }
 
 
-/* Pixel-art pond scene: crisp stepped terrain and blocky water, matching the ducks. */
+/* Pixel-art pond scene: limited palette, crisp clusters, no smooth cartoon gradients or grid overlay. */
 .play-layout .pond-scene {
   image-rendering: pixelated;
-  background-color: #8bcf5a;
+  background-color: #9bd45b;
   background-image:
-    radial-gradient(square, #b5e56b 0 2px, transparent 2.5px),
-    repeating-linear-gradient(0deg, transparent 0 15px, rgba(26,91,43,.12) 15px 16px),
-    repeating-linear-gradient(90deg, transparent 0 15px, rgba(26,91,43,.12) 15px 16px),
-    linear-gradient(#76bd55 0%, #a7db61 58%, #4f9a45 100%);
-  background-size: 32px 32px, 16px 16px, 16px 16px, 100% 100%;
-  border: 4px solid #244f36;
+    linear-gradient(#b5e46a 0 0),
+    linear-gradient(#80c653 0 0),
+    linear-gradient(#75bd4b 0 0),
+    linear-gradient(#acd95e 0 0),
+    linear-gradient(#7fc653 0 0),
+    linear-gradient(#a9dc62 0 0),
+    linear-gradient(#78bd4e 0 0);
+  background-size: 42px 18px, 54px 20px, 34px 16px, 38px 18px, 48px 22px, 28px 14px, 40px 17px;
+  background-position: 8% 82%, 32% 92%, 67% 77%, 89% 89%, 15% 60%, 57% 68%, 92% 56%;
+  background-repeat: no-repeat;
+  border: 4px solid #202d27;
   border-radius: 4px;
-  box-shadow: 0 4px 0 #173d2b, 0 10px 0 rgba(23,61,43,.2);
+  box-shadow: 0 4px 0 #202d27, 0 8px 0 rgba(32,45,39,.15);
 }
 .play-layout .scene-sun {
-  width: 28px;
-  height: 28px;
-  top: 24px;
-  border: 4px solid #f4b943;
+  width: 24px;
+  height: 24px;
+  top: 25px;
+  right: 12%;
+  border: 4px solid #202d27;
   border-radius: 0;
-  box-shadow: 0 0 0 4px rgba(255,226,138,.26);
-  image-rendering: pixelated;
+  background: #ffd943;
+  box-shadow: 4px 0 0 #ffd943, -4px 0 0 #ffd943, 0 4px 0 #ffd943, 0 -4px 0 #ffd943;
 }
 .play-layout .cloud {
-  height: 12px;
+  width: 42px;
+  height: 10px;
+  border: 0;
   border-radius: 0;
-  background: #f3f4d7;
-  box-shadow: -12px 0 0 #f3f4d7, 12px 0 0 #f3f4d7, 0 -8px 0 #f3f4d7;
+  background: #f5f1d5;
+  box-shadow: -8px 0 0 #f5f1d5, 8px 0 0 #f5f1d5, 0 -8px 0 #f5f1d5;
 }
 .play-layout .cloud::before,
-.play-layout .cloud::after { border-radius: 0; }
-.play-layout .cloud::before { width: 14px; height: 12px; left: 8px; bottom: 4px; }
-.play-layout .cloud::after { width: 16px; height: 16px; left: 28px; bottom: 4px; }
+.play-layout .cloud::after { display: none; }
+.play-layout .cloud-one { top: 61px; left: 12%; }
+.play-layout .cloud-two { top: 100px; right: 18%; opacity: .85; }
 .play-layout .scene-hill {
   right: 0;
   left: 0;
   border-radius: 0;
   transform: none;
-  clip-path: polygon(0 44%, 8% 44%, 8% 30%, 20% 30%, 20% 18%, 32% 18%, 32% 28%, 48% 28%, 48% 10%, 61% 10%, 61% 25%, 76% 25%, 76% 38%, 90% 38%, 90% 50%, 100% 50%, 100% 100%, 0 100%);
+  clip-path: polygon(0 48%, 10% 48%, 10% 34%, 21% 34%, 21% 22%, 34% 22%, 34% 34%, 49% 34%, 49% 12%, 62% 12%, 62% 25%, 75% 25%, 75% 39%, 89% 39%, 89% 50%, 100% 50%, 100% 100%, 0 100%);
 }
-.play-layout .hill-back { bottom: 48px; height: 105px; background: #5ca64a; }
+.play-layout .hill-back {
+  bottom: 50px;
+  height: 104px;
+  background: #4c9d48;
+}
 .play-layout .hill-front {
   bottom: 22px;
-  height: 86px;
-  background: #78bd4c;
-  clip-path: polygon(0 30%, 12% 30%, 12% 18%, 24% 18%, 24% 36%, 39% 36%, 39% 22%, 55% 22%, 55% 35%, 69% 35%, 69% 14%, 83% 14%, 83% 30%, 100% 30%, 100% 100%, 0 100%);
+  height: 82px;
+  background: #67b64b;
+  clip-path: polygon(0 35%, 13% 35%, 13% 20%, 27% 20%, 27% 34%, 41% 34%, 41% 18%, 56% 18%, 56% 33%, 71% 33%, 71% 12%, 84% 12%, 84% 27%, 100% 27%, 100% 100%, 0 100%);
 }
 .play-layout .pond-water {
   right: 9%;
-  bottom: 24px;
+  bottom: 23px;
   left: 9%;
-  height: 45%;
-  border: 0;
+  height: 43%;
+  border: 4px solid #202d27;
   border-radius: 0;
-  clip-path: polygon(18% 0, 36% 0, 36% 7%, 66% 7%, 66% 0, 83% 0, 83% 8%, 93% 8%, 93% 18%, 100% 18%, 100% 70%, 92% 70%, 92% 84%, 79% 84%, 79% 94%, 61% 94%, 61% 100%, 35% 100%, 35% 94%, 17% 94%, 17% 84%, 7% 84%, 7% 70%, 0 70%, 0 23%, 8% 23%, 8% 10%, 18% 10%);
-  background-color: #2499d1;
+  clip-path: polygon(16% 0, 34% 0, 34% 7%, 68% 7%, 68% 0, 84% 0, 84% 7%, 94% 7%, 94% 18%, 100% 18%, 100% 70%, 92% 70%, 92% 83%, 80% 83%, 80% 93%, 62% 93%, 62% 100%, 34% 100%, 34% 93%, 17% 93%, 17% 83%, 7% 83%, 7% 70%, 0 70%, 0 22%, 8% 22%, 8% 10%, 16% 10%);
+  background-color: #2699d0;
   background-image:
-    repeating-linear-gradient(0deg, transparent 0 15px, rgba(8,79,145,.18) 15px 16px),
-    repeating-linear-gradient(90deg, transparent 0 15px, rgba(8,79,145,.18) 15px 16px),
-    linear-gradient(180deg, #42b9ed, #1685c5);
+    linear-gradient(#45b9e8 0 0),
+    linear-gradient(#1684bd 0 0),
+    linear-gradient(#78d6ef 0 0),
+    linear-gradient(#78d6ef 0 0),
+    linear-gradient(#1684bd 0 0),
+    linear-gradient(#1684bd 0 0);
+  background-size: 30% 9px, 23% 12px, 26px 5px, 18px 5px, 20% 8px, 16% 8px;
+  background-position: 15% 15%, 70% 55%, 25% 32%, 63% 25%, 18% 78%, 75% 80%;
+  background-repeat: no-repeat;
   box-shadow: none;
 }
 .play-layout .water-glint {
-  height: 6px;
+  height: 5px;
   border-radius: 0;
-  background: #83dcf5;
-  box-shadow: 6px 0 0 #83dcf5, 12px 0 0 #83dcf5;
+  background: #9be7f5;
+  box-shadow: 5px 0 0 #9be7f5, 10px 0 0 #9be7f5;
 }
 .play-layout .scene-flower {
   z-index: 2;
-  font-size: 12px;
-  line-height: 1;
-  color: #fff5a9;
-  text-shadow: 2px 0 #e4a844, -2px 0 #e4a844, 0 2px #e4a844, 0 -2px #e4a844;
-  image-rendering: pixelated;
+  font-size: 0;
+  width: 6px;
+  height: 6px;
+  background: #fff3a8;
+  border: 2px solid #202d27;
+  border-radius: 0;
+  box-shadow: 6px 0 0 #ef6f73, -6px 0 0 #fff3a8, 0 -6px 0 #fff3a8, 0 6px 0 #ef6f73;
+  text-shadow: none;
 }
 @media (max-width: 700px) {
   .play-layout .pond-scene { border-radius: 4px; }
