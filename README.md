@@ -6,12 +6,14 @@ A standalone rubber-duck-themed incremental browser game. The visual tone starts
 
 - Responsive, mobile-first page designed for touch and desktop pointer input.
 - A cheerful inline SVG rubber duck with tap animation.
-- Quack Points counter and floating reward feedback.
-- Game state kept separately from DOM code.
-- Small automated tests for reward math and input validation.
+- Quack Points counter, per-tap rewards, and floating reward feedback.
+- First producer: Duckling Helper, with a scaling Quack Point price and +1 Quack Point per second.
+- Working affordability checks, hire action, owned count, production-per-second display, and purchase confirmation animation.
+- Fractional production accumulation so short animation frames do not discard earned progress.
+- Game economy kept separately from DOM code, with automated tests for purchase and production rules.
 - Reduced-motion support and keyboard-visible focus styling.
 
-The current milestone is the clickable-duck foundation. Producers, upgrades, saving, offline progress, and other planned systems have not been implemented yet.
+The current playable slice includes manual tapping and the first automatic producer. Saving, offline progress, upgrades beyond the starter producer, and broader progression systems have not been implemented yet.
 
 ## Run locally
 
@@ -39,4 +41,4 @@ No framework, bundler, or third-party runtime dependency is required. The styles
 
 ## Status
 
-The automated state tests cover the initial game-state helpers. Real-browser smoke testing, real-device iPhone Safari verification, and deployment verification must be completed before describing this as a verified playable release.
+The automated state tests cover tapping, producer pricing, affordability, purchases, and passive production. Real-browser smoke testing, real-device iPhone Safari verification, and deployment verification must be completed before describing this as a verified playable release.
