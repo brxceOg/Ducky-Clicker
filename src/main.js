@@ -12,6 +12,7 @@ import {
 const state = createInitialState();
 const duckButton = document.querySelector("#duck-button");
 const tapHint = document.querySelector(".tap-hint");
+const currencyBeak = document.querySelector(".beak-icon");
 const countDisplay = document.querySelector("#quack-count");
 const tapPowerDisplay = document.querySelector("#tap-power");
 const productionRateDisplay = document.querySelector("#production-rate");
@@ -173,6 +174,12 @@ function moveWalkingDucklings(elapsedSeconds) {
 }
 
 duckButton.addEventListener("click", () => {
+  if (currencyBeak) {
+    currencyBeak.classList.remove("is-quacking");
+    void currencyBeak.offsetWidth;
+    currencyBeak.classList.add("is-quacking");
+    window.setTimeout(() => currencyBeak.classList.remove("is-quacking"), 560);
+  }
   Object.assign(state, earnQuackPoints(state));
   lastPurchaseMessage = "";
   render();
