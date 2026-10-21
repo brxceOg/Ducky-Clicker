@@ -598,3 +598,45 @@ h1 span { color: #d18a31; }
   .producer-panel.has-purchase { animation: none; }
   .buy-button { transition: none; }
 }
+
+
+/* Baby Duckling Helpers wandering around the pond */
+.walking-ducklings {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.walking-duckling {
+  position: absolute;
+  width: 43px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  will-change: left, top, transform;
+  filter: drop-shadow(0 2px 0 rgba(91, 68, 37, .12));
+}
+.walking-duckling svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  image-rendering: pixelated;
+  animation: duckling-waddle .42s steps(2, end) infinite;
+  transform-origin: 50% 85%;
+}
+.walking-duckling:nth-child(3n + 2) svg { animation-delay: -.14s; }
+.walking-duckling:nth-child(3n) svg { animation-delay: -.28s; }
+@keyframes duckling-waddle {
+  0%, 100% { translate: 0 0; rotate: -3deg; }
+  50% { translate: 0 -2px; rotate: 3deg; }
+}
+@media (max-width: 520px) {
+  .walking-duckling { width: 36px; height: 32px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .walking-duckling svg { animation: none; }
+}
