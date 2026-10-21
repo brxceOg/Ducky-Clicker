@@ -6,8 +6,8 @@
     <meta name="theme-color" content="#f8f0d8" />
     <meta name="description" content="A tiny rubber duck. A suspiciously big future. Start your Ducky Clicker empire." />
     <title>Ducky Clicker</title>
-    <link rel="stylesheet" href="./styles.css?v=20261021-20" />
-    <script type="module" src="./src/main.js?v=20261021-20"></script>
+    <link rel="stylesheet" href="./styles.css?v=20261021-21" />
+    <script type="module" src="./src/main.js?v=20261021-21"></script>
   </head>
   <body>
     <main class="game-shell">
@@ -46,73 +46,97 @@
 
         <section class="pond-scene" aria-label="Your rubber duck pond">
           <svg class="scene-art" viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" shape-rendering="crispEdges">
-            <defs>
-              <pattern id="grass-base" width="64" height="48" patternUnits="userSpaceOnUse">
-                <rect width="64" height="48" fill="#91c957"/>
-                <path d="M8 8h8v8H8zM40 24h8v8h-8zM24 40h8v4h-8z" fill="#a8db68"/>
-                <path d="M28 4h4v8h-4zM52 12h8v4h-8zM4 32h8v4H4zM44 40h4v4h-4z" fill="#79b84d"/>
-                <path d="M20 20h4v4h-4zM56 36h4v4h-4zM12 44h4v4h-4z" fill="#c0e779"/>
-              </pattern>
-              <pattern id="water-pixels" width="72" height="48" patternUnits="userSpaceOnUse">
-                <rect width="72" height="48" fill="#258fbd"/>
-                <path d="M8 8h24v4H8zM44 28h20v4H44zM28 40h12v4H28z" fill="#42b9e2"/>
-                <path d="M48 8h8v4h-8zM12 32h8v4h-8zM60 40h8v4h-8z" fill="#1476a7"/>
-                <path d="M36 20h12v4H36zM4 20h8v4H4z" fill="#76d5ed"/>
-              </pattern>
-              <pattern id="sand-pixels" width="40" height="32" patternUnits="userSpaceOnUse">
-                <rect width="40" height="32" fill="#d5bc79"/>
-                <path d="M4 4h12v4H4zM24 20h8v4h-8z" fill="#ead69a"/>
-                <path d="M28 4h8v4h-8zM8 24h8v4H8z" fill="#b99b5e"/>
-              </pattern>
-            </defs>
-            <!-- Sky kept quiet so the duck remains the focal point. -->
-            <rect width="640" height="400" fill="#b9e5df"/>
-            <path d="M0 0h640v16H0z" fill="#cceee3"/>
-            <path d="M48 54h32V42h28v12h12v8h16v12H48zM438 76h24V64h32v12h12v8h16v12h-84z" fill="#f8f5dc"/>
-            <path d="M56 78h76v4H56zM446 98h76v4h-76z" fill="#a6d7d0"/>
-            <!-- Sun: stepped silhouette, compact highlight and warm shade. -->
-            <path d="M526 28h36v8h8v8h8v32h-8v8h-8v8h-36v-8h-8v-8h-8V44h8v-8h8z" fill="#293c35"/>
-            <path d="M530 36h28v8h8v8h4v20h-8v8h-8v4h-24v-8h-8V48h8v-8h8z" fill="#ffd943"/>
-            <path d="M530 36h16v4h-8v8h-8zM554 76h8v-8h4v12h-12z" fill="#fff09a"/>
-            <!-- Distant tree canopy, each tree built from pixel clusters. -->
-            <path d="M0 190V158h24v-16h16v-12h28v12h16v16h16v-26h24v-12h28v12h12v24h24v-18h20v-16h28v12h16v18h20v-12h28v12h20v-18h28v-12h24v12h12v20h20v-14h28v-14h28v12h16v20h24v-14h28v-12h24v12h16v22h24v-10h32v242H0z" fill="#3e7650"/>
-            <path d="M0 190h36v-16h20v12h24v-12h20v16h28v-14h24v18h28v-12h20v14h28v-16h24v12h28v-14h24v16h24v-12h28v14h20v-12h24v14h24v-12h28v14h20v-10h28v12h28v-12h24v14h32v210H0z" fill="#568f55"/>
-            <!-- Small tree trunks and canopy highlights add scale and depth. -->
-            <path d="M38 178h8v28h-8zM118 164h8v32h-8zM222 164h8v34h-8zM326 162h8v34h-8zM430 164h8v34h-8zM548 170h8v28h-8z" fill="#76563b"/>
-            <path d="M18 146h20v-12h20v12h12v16H18zM100 134h20v-12h20v12h12v16h-52zM202 140h20v-12h20v12h12v16h-52zM306 136h20v-12h20v12h12v16h-52zM410 138h20v-12h20v12h12v16h-52zM530 144h20v-12h20v12h12v16h-52z" fill="#6eaa5a"/>
-            <path d="M22 146h16v4H22zM104 134h16v4h-16zM206 140h16v4h-16zM310 136h16v4h-16zM414 138h16v4h-16zM534 144h16v4h-16z" fill="#8bc96a"/>
-            <!-- Open meadow, built from restrained tile-like color variation. -->
-            <path d="M0 226h72v-12h48v12h64v-8h48v12h64v-12h48v8h64v-12h48v12h56v-8h56v8h72v174H0z" fill="url(#grass-base)"/>
-            <path d="M0 282h56v-8h40v8h48v-8h48v8h56v-8h48v8h56v-8h40v8h56v-8h48v8h56v-8h48v8h40v118H0z" fill="#85c34f"/>
-            <path d="M0 310h72v8h40v-8h48v8h64v-8h48v8h48v-8h64v8h40v-8h56v8h56v-8h48v8h56v82H0z" fill="url(#grass-base)"/>
-            <!-- Pond bank: dark earth edge, then a narrow sandy shoreline, then the water. -->
-            <path d="M138 236h40v-8h40v-8h48v8h32v-8h56v8h40v8h32v16h24v24h16v40h-8v24h-24v16h-40v8h-56v8h-48v-8h-48v-8h-40v-16h-24v-16h-16v-24h-8v-32h8v-16h-16z" fill="#315b3d"/>
-            <path d="M146 240h36v-8h40v-8h40v8h36v-8h52v8h40v8h32v16h20v24h16v36h-8v20h-24v16h-40v8h-52v8h-44v-8h-44v-8h-36v-16h-24v-16h-16v-24h-8v-28h8v-16h-16z" fill="#d5bc79"/>
-            <path d="M154 244h32v-8h40v-8h32v8h40v-8h44v8h40v8h32v16h20v24h12v32h-8v20h-24v12h-40v8h-48v8h-40v-8h-40v-8h-32v-16h-20v-16h-12v-24h-8v-24h8v-16h-16z" fill="#6eaa4e"/>
-            <path d="M166 252h28v-8h36v-8h32v8h36v-8h40v8h36v8h28v16h16v20h8v28h-8v16h-24v12h-36v8h-44v8h-36v-8h-36v-8h-28v-12h-20v-16h-12v-20h-8v-24h8v-16h-16z" fill="#d5bc79"/>
-            <!-- Water surface with a single coherent silhouette and controlled highlights. -->
-            <path d="M186 264h32v-8h36v8h32v-8h44v8h36v8h28v16h16v28h-8v16h-24v12h-36v8h-44v8h-44v-8h-36v-8h-28v-12h-16v-20h-8v-24h8z" fill="#203b37"/>
-            <path d="M194 268h28v-8h32v8h32v-8h40v8h36v8h28v16h12v24h-8v16h-24v12h-36v8h-40v8h-40v-8h-32v-8h-28v-12h-12v-20h-8v-20h8z" fill="url(#water-pixels)"/>
-            <!-- Pixel reflections, lily pads, and reeds placed in deliberate clusters. -->
-            <path d="M218 276h28v4h-28zM258 284h20v4h-20zM310 276h24v4h-24zM340 296h28v4h-28zM230 316h16v4h-16zM286 328h24v4h-24z" fill="#8ee3f0"/>
-            <path d="M258 308h20v4h-20zM318 316h16v4h-16zM356 324h12v4h-12z" fill="#126f9f"/>
-            <path d="M366 276h12v-8h8v8h8v8h-12v4h-8v-4h-4z" fill="#315b3d"/>
-            <path d="M370 272h8v4h8v4h-8v4h-8z" fill="#78bd4e"/>
-            <path d="M190 292h8v-12h4v-8h4v20h-4v8h-8zM398 302h8v-16h4v-8h4v24h-4v8h-8z" fill="#315b3d"/>
-            <path d="M194 280h4v12h-4zM402 290h4v12h-4z" fill="#a7d96a"/>
-            <!-- Meadow details: clustered flowers, clover and stones, with consistent dark pixel outlines. -->
-            <path d="M70 286h8v-8h8v8h8v8h-8v8h-8v-8h-8z" fill="#315b3d"/>
-            <path d="M78 282h8v8h8v4h-8v8h-8v-8h-8v-4h8z" fill="#fff0a0"/>
-            <path d="M82 286h4v4h-4z" fill="#ed7774"/>
-            <path d="M490 260h8v-8h8v8h8v8h-8v8h-8v-8h-8z" fill="#315b3d"/>
-            <path d="M498 256h8v8h8v4h-8v8h-8v-8h-8v-4h8z" fill="#fff0a0"/>
-            <path d="M502 260h4v4h-4z" fill="#ed7774"/>
-            <path d="M126 330h8v-8h8v8h8v8h-8v8h-8v-8h-8z" fill="#315b3d"/>
-            <path d="M134 326h8v8h8v4h-8v8h-8v-8h-8v-4h8z" fill="#f8f0b1"/>
-            <path d="M138 330h4v4h-4z" fill="#e98578"/>
-            <path d="M44 350h20v8H44zM74 354h12v8H74zM528 342h24v8h-24z" fill="#d7d0b1"/>
-            <path d="M32 378h24v8H32zM576 378h32v8h-32z" fill="#4e9450"/>
-            <path d="M26 370h8v8h-8zM60 366h8v8h-8zM560 366h8v8h-8zM604 354h8v8h-8z" fill="#b5df6b"/>
+            <!-- A hand-composed orthogonal pixel scene: no diagonal strokes, gradients, or pixel-filter effects. -->
+            <rect width="640" height="400" fill="#b9e4df"/>
+            <rect y="0" width="640" height="12" fill="#c9eee5"/>
+            <!-- Block clouds -->
+            <path d="M56 58H80V46H108V54H120V62H136V74H56Z" fill="#f8f5dc"/>
+            <path d="M448 82H468V70H496V78H512V86H528V98H448Z" fill="#f8f5dc"/>
+            <rect x="64" y="78" width="64" height="4" fill="#a5d7d0"/>
+            <rect x="456" y="102" width="64" height="4" fill="#a5d7d0"/>
+            <!-- Pixel sun -->
+            <path d="M520 28H560V36H568V44H576V76H568V84H560V92H520V84H512V76H504V44H512V36H520Z" fill="#34483b"/>
+            <path d="M524 36H556V44H564V76H556V84H524V76H516V44H524Z" fill="#ffd943"/>
+            <rect x="524" y="40" width="12" height="4" fill="#fff09a"/>
+            <rect x="520" y="44" width="4" height="12" fill="#fff09a"/>
+            <rect x="552" y="72" width="8" height="4" fill="#eeb52f"/>
+            <!-- Distant forest: stepped crowns and trunks on one pixel grid -->
+            <path d="M0 196V156H20V140H40V124H68V136H84V152H104V132H128V116H156V128H172V148H192V136H212V120H240V132H256V152H276V136H304V120H332V132H348V152H368V136H392V120H420V132H436V152H456V136H480V120H508V132H524V152H548V136H572V124H600V140H620V152H640V400H0Z" fill="#3c704b"/>
+            <path d="M0 184H24V176H48V188H72V172H96V188H120V176H144V192H168V180H192V192H216V176H240V188H264V176H288V192H312V180H336V192H360V176H384V188H408V176H432V192H456V180H480V192H504V176H528V188H552V176H576V192H600V180H624V192H640V400H0Z" fill="#568b50"/>
+            <rect x="36" y="164" width="8" height="32" fill="#76563b"/>
+            <rect x="116" y="156" width="8" height="36" fill="#76563b"/>
+            <rect x="220" y="160" width="8" height="32" fill="#76563b"/>
+            <rect x="324" y="152" width="8" height="40" fill="#76563b"/>
+            <rect x="428" y="160" width="8" height="32" fill="#76563b"/>
+            <rect x="548" y="160" width="8" height="32" fill="#76563b"/>
+            <rect x="20" y="144" width="20" height="8" fill="#79b75a"/>
+            <rect x="100" y="132" width="20" height="8" fill="#79b75a"/>
+            <rect x="204" y="136" width="20" height="8" fill="#79b75a"/>
+            <rect x="308" y="132" width="20" height="8" fill="#79b75a"/>
+            <rect x="412" y="136" width="20" height="8" fill="#79b75a"/>
+            <rect x="532" y="140" width="20" height="8" fill="#79b75a"/>
+            <!-- Open grassy glade with purposeful square color clusters -->
+            <rect y="204" width="640" height="196" fill="#83bd50"/>
+            <path d="M0 212H80V204H144V212H216V204H288V212H360V204H432V212H504V204H568V212H640V400H0Z" fill="#91c957"/>
+            <rect x="20" y="236" width="28" height="8" fill="#a8db68"/>
+            <rect x="56" y="252" width="16" height="8" fill="#72b44a"/>
+            <rect x="92" y="224" width="24" height="8" fill="#b6e477"/>
+            <rect x="132" y="260" width="20" height="8" fill="#72b44a"/>
+            <rect x="468" y="228" width="28" height="8" fill="#b6e477"/>
+            <rect x="520" y="248" width="20" height="8" fill="#72b44a"/>
+            <rect x="572" y="224" width="32" height="8" fill="#a8db68"/>
+            <rect x="28" y="304" width="24" height="8" fill="#a8db68"/>
+            <rect x="72" y="328" width="16" height="8" fill="#6fac46"/>
+            <rect x="116" y="352" width="28" height="8" fill="#b6e477"/>
+            <rect x="468" y="316" width="24" height="8" fill="#a8db68"/>
+            <rect x="540" y="348" width="32" height="8" fill="#6fac46"/>
+            <rect x="592" y="304" width="20" height="8" fill="#b6e477"/>
+            <!-- Pond: clean nested stepped silhouettes, each edge follows the pixel grid -->
+            <path d="M152 244H184V236H224V228H272V236H312V228H360V236H400V244H432V260H448V284H456V324H448V344H424V360H392V368H344V376H296V368H256V360H224V344H200V328H184V304H176V276H168V260H152Z" fill="#315b3d"/>
+            <path d="M160 248H192V240H228V232H268V240H308V232H356V240H396V248H424V264H440V288H448V320H440V340H416V352H388V360H344V368H300V360H260V352H228V336H208V320H192V300H184V276H176V264H160Z" fill="#d5bc79"/>
+            <path d="M168 252H196V244H232V236H268V244H304V236H352V244H392V252H416V268H432V288H440V316H432V336H408V348H384V356H344V364H304V356H264V348H232V332H212V316H196V296H188V276H180V264H168Z" fill="#7eb84d"/>
+            <path d="M184 264H216V256H248V248H280V256H312V248H344V256H376V264H400V276H416V292H424V316H416V332H392V344H360V352H320V360H280V352H248V344H224V328H208V312H200V292H192V276H184Z" fill="#203b37"/>
+            <path d="M192 268H220V260H252V252H280V260H312V252H344V260H372V268H396V280H412V296H416V316H408V328H388V340H356V348H320V356H284V348H252V340H228V324H212V308H204V292H196V276H192Z" fill="#258fbd"/>
+            <!-- Water pixels: square reflections and darker depth clusters -->
+            <rect x="224" y="276" width="28" height="4" fill="#8ee3f0"/>
+            <rect x="220" y="280" width="16" height="4" fill="#8ee3f0"/>
+            <rect x="268" y="292" width="20" height="4" fill="#42b9e2"/>
+            <rect x="312" y="276" width="24" height="4" fill="#76d5ed"/>
+            <rect x="340" y="300" width="28" height="4" fill="#42b9e2"/>
+            <rect x="236" y="316" width="16" height="4" fill="#76d5ed"/>
+            <rect x="288" y="332" width="24" height="4" fill="#42b9e2"/>
+            <rect x="324" y="316" width="16" height="4" fill="#1476a7"/>
+            <rect x="360" y="324" width="12" height="4" fill="#1476a7"/>
+            <!-- Lily pad with square-cut notch -->
+            <path d="M360 276H376V268H388V276H400V284H388V288H372V284H360Z" fill="#315b3d"/>
+            <rect x="372" y="272" width="8" height="4" fill="#a8db68"/>
+            <rect x="380" y="276" width="8" height="4" fill="#78bd4e"/>
+            <!-- Reeds, built from stacked rectangles -->
+            <rect x="188" y="280" width="4" height="20" fill="#315b3d"/>
+            <rect x="192" y="272" width="4" height="12" fill="#315b3d"/>
+            <rect x="200" y="284" width="4" height="16" fill="#315b3d"/>
+            <rect x="196" y="276" width="4" height="12" fill="#a7d96a"/>
+            <rect x="400" y="288" width="4" height="20" fill="#315b3d"/>
+            <rect x="404" y="280" width="4" height="12" fill="#315b3d"/>
+            <rect x="412" y="292" width="4" height="16" fill="#315b3d"/>
+            <!-- Tiny flowers and clover: stepped clusters with dark outlines -->
+            <path d="M68 288H76V280H84V288H92V296H84V304H76V296H68Z" fill="#315b3d"/>
+            <rect x="76" y="284" width="8" height="12" fill="#fff0a0"/>
+            <rect x="72" y="288" width="16" height="4" fill="#fff0a0"/>
+            <rect x="80" y="288" width="4" height="4" fill="#ed7774"/>
+            <path d="M488 264H496V256H504V264H512V272H504V280H496V272H488Z" fill="#315b3d"/>
+            <rect x="496" y="260" width="8" height="12" fill="#fff0a0"/>
+            <rect x="492" y="264" width="16" height="4" fill="#fff0a0"/>
+            <rect x="500" y="264" width="4" height="4" fill="#ed7774"/>
+            <rect x="44" y="352" width="20" height="8" fill="#d7d0b1"/>
+            <rect x="76" y="356" width="12" height="8" fill="#d7d0b1"/>
+            <rect x="528" y="344" width="24" height="8" fill="#d7d0b1"/>
+            <rect x="32" y="380" width="24" height="8" fill="#4e9450"/>
+            <rect x="576" y="380" width="32" height="8" fill="#4e9450"/>
+            <rect x="28" y="372" width="8" height="8" fill="#b5df6b"/>
+            <rect x="60" y="368" width="8" height="8" fill="#b5df6b"/>
+            <rect x="560" y="368" width="8" height="8" fill="#b5df6b"/>
+            <rect x="604" y="356" width="8" height="8" fill="#b5df6b"/>
           </svg>
           <div class="walking-ducklings" id="walking-ducklings" aria-hidden="true"></div>
           <button class="duck-button" id="duck-button" type="button" aria-label="Tap the rubber duck to earn one Quack Point">
