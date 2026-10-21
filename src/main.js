@@ -35,19 +35,17 @@ let lastPurchaseMessage = "";
 let lastProductionTick = performance.now();
 const walkingDucklings = [];
 
-const DUCKLING_SPRITE = `
-  <svg viewBox="0 0 40 34" shape-rendering="crispEdges" focusable="false">
-    <path d="M5 22h2v-3h3v-2h5v2h5v2h4v4h-3v3H9v-2H6v-2H5z" fill="#71472c"/>
-    <path d="M7 22h2v-2h5v2h5v2h3v2h-3v2H10v-2H7v-2z" fill="#efbd32"/>
-    <path d="M12 18v-4h2V9h3V6h7V5h5v3h3v5h2v5h-3v4H19v-2h-4v-2z" fill="#71472c"/>
-    <path d="M14 17v-4h2V9h3V7h6v1h4v3h2v5h-2v3H20v-2h-4v-2z" fill="#ffe06a"/>
-    <path d="M17 7h2V4h2v3h2V3h2v4h3v2H17z" fill="#efbd32"/>
-    <path d="M29 12h4v1h3v3h-3v1h-4v-2h-1v-2h1z" fill="#ff9e46"/>
-    <rect x="25" y="10" width="2" height="3" fill="#71472c"/>
-    <rect x="25" y="10" width="1" height="1" fill="#fffdf2"/>
-    <path d="M10 27h4v2h-1v2H9v-2h1zM18 27h4v2h2v2h-6v-2z" fill="#f39b42" stroke="#71472c" stroke-width=".7"/>
-    <path d="M16 19h4v1h3v2h-5v-1h-2z" fill="#fff0a8"/>
-  </svg>`;
+function createDucklingSprite() {
+  // Clone the purchase-card artwork so the walking character is exactly the same SVG.
+  const icon = document.querySelector(".producer-art svg");
+  if (!icon) throw new Error("Duckling Helper artwork is missing.");
+  const sprite = icon.cloneNode(true);
+  sprite.setAttribute("aria-hidden", "true");
+  sprite.removeAttribute("role");
+  sprite.removeAttribute("aria-labelledby");
+  sprite.querySelectorAll("title").forEach((title) => title.remove());
+  return sprite;
+}
 
 function render() {
   const price = getDucklingHelperCost(state.ducklingHelpers);
@@ -106,7 +104,7 @@ function spawnWalkingDuckling() {
   const bounds = scene.getBoundingClientRect();
   const sprite = document.createElement("div");
   sprite.className = "walking-duckling";
-  sprite.innerHTML = DUCKLING_SPRITE;
+  sprite.append(createDucklingSprite());
 
   // Spawn in the visible grass beside/below the main duck, not underneath its large tap target.
   // Alternate sides so a newly hired helper is immediately easy to spot on phone-sized scenes.
@@ -125,6 +123,10 @@ function spawnWalkingDuckling() {
 
   walkingDucklingsLayer.append(sprite);
   walkingDucklings.push(duckling);
+  sprite.classList.add("is-spawning");
+  sprite.addEventListener("animationend", (event) => {
+    if (event.animationName === "duckling-spawn") sprite.classList.remove("is-spawning");
+  });
   positionWalkingDuckling(duckling);
 }
 
