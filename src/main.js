@@ -127,7 +127,7 @@ producerPanel.addEventListener("animationend", (event) => {
 });
 
 function productionLoop(now) {
-  const elapsedSeconds = Math.min((now - lastProductionTick) / 1000, 1);
+  const elapsedSeconds = Math.max(0, (now - lastProductionTick) / 1000);
   lastProductionTick = now;
   if (state.ducklingHelpers > 0 && elapsedSeconds > 0) {
     Object.assign(state, accrueProduction(state, elapsedSeconds));
