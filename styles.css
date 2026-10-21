@@ -658,3 +658,47 @@ h1 span { color: #d18a31; }
 @media (prefers-reduced-motion: reduce) {
   .walking-duckling svg { animation: none; }
 }
+
+
+/* Main play layout: tap scene and upgrades on the left, scrollable shop on the right. */
+.game-content { width: min(100%, 1080px); }
+.play-layout { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(245px, .85fr); align-items: start; gap: 22px; margin-top: 8px; }
+.play-main-column { min-width: 0; display: flex; flex-direction: column; gap: 18px; }
+.play-layout .pond-scene { width: 100%; height: clamp(360px, 48vh, 510px); min-height: 340px; }
+.play-layout .duck-button { top: 45%; }
+.play-layout .producer-panel { position: sticky; top: 16px; max-height: min(760px, calc(100svh - 32px)); min-width: 0; margin: 0; padding: 15px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #d8c79f transparent; }
+.play-layout .producer-panel-heading { align-items: flex-start; }
+.play-layout .producer-panel-heading h2 { font-size: 19px; }
+.play-layout .producer-count { font-size: 8px; }
+.play-layout .producer-card { grid-template-columns: 58px minmax(0, 1fr); gap: 10px; padding: 11px; }
+.play-layout .producer-art { width: 58px; height: 60px; }
+.play-layout .producer-art svg { width: 50px; height: 50px; }
+.play-layout .producer-copy { grid-column: 2; }
+.play-layout .producer-copy h3 { font-size: 12px; }
+.play-layout .producer-copy p { font-size: 10px; }
+.play-layout .producer-yield { font-size: 9px; }
+.play-layout .producer-buy-area { grid-column: 1 / -1; display: grid; grid-template-columns: auto auto minmax(0, 1fr); align-items: center; gap: 4px 8px; min-width: 0; padding-top: 10px; border-top: 1px dashed #e5d6b6; text-align: left; }
+.play-layout .price-label { grid-column: 1; grid-row: 1; }
+.play-layout .producer-price { grid-column: 2; grid-row: 1; font-size: 20px; }
+.play-layout .price-currency { grid-column: 1 / 3; grid-row: 2; }
+.play-layout .buy-button { grid-column: 3; grid-row: 1 / 3; min-height: 42px; margin-top: 0; }
+.upgrades-panel { min-width: 0; padding: 17px; background: rgba(255,253,247,.92); border: 2px solid #e8d9b9; border-radius: 19px; box-shadow: 0 4px 0 #e4d3ad, 0 8px 20px rgba(102,77,35,.05); }
+.upgrades-panel-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 13px; }
+.upgrades-panel-heading h2 { margin: 0; font-size: 21px; font-weight: 900; letter-spacing: -.035em; line-height: 1.15; }
+.upgrade-count { flex: 0 0 auto; padding: 6px 8px; color: #8c7d62; background: #f5eedc; border: 1px solid #e7d9b9; border-radius: 7px; font-size: 8px; font-weight: 900; letter-spacing: .05em; }
+.upgrade-empty-state { display: flex; align-items: center; gap: 12px; min-height: 82px; padding: 14px; background: #fffaf0; border: 1px dashed #dfd0ad; border-radius: 12px; }
+.upgrade-lock { display: grid; width: 38px; height: 38px; flex: 0 0 auto; place-items: center; color: #b08a43; background: #f7edce; border: 1px solid #e9d8a5; border-radius: 10px; font-size: 20px; }
+.upgrade-empty-state p { display: flex; flex-direction: column; gap: 4px; margin: 0; }
+.upgrade-empty-state strong { color: #65523a; font-size: 11px; font-weight: 900; }
+.upgrade-empty-state p span { color: #93846c; font-size: 10px; line-height: 1.45; }
+@media (max-width: 700px) {
+  .game-content { width: 100%; }
+  .play-layout { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .play-main-column { gap: 14px; }
+  .play-layout .pond-scene { height: clamp(300px, 43svh, 390px); min-height: 300px; }
+  .play-layout .producer-panel { position: static; max-height: 390px; padding: 13px 11px; }
+  .play-layout .producer-card { grid-template-columns: 52px minmax(0, 1fr); }
+  .play-layout .producer-art { width: 52px; height: 58px; }
+  .play-layout .producer-art svg { width: 48px; height: 48px; }
+  .instruction-row { padding-top: 14px; }
+}
