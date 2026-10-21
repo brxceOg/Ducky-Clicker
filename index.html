@@ -6,8 +6,8 @@
     <meta name="theme-color" content="#f8f0d8" />
     <meta name="description" content="A tiny rubber duck. A suspiciously big future. Start your Ducky Clicker empire." />
     <title>Ducky Clicker</title>
-    <link rel="stylesheet" href="./styles.css?v=20261021-11" />
-    <script type="module" src="./src/main.js?v=20261021-11"></script>
+    <link rel="stylesheet" href="./styles.css?v=20261021-12" />
+    <script type="module" src="./src/main.js?v=20261021-12"></script>
   </head>
   <body>
     <main class="game-shell">
@@ -62,21 +62,34 @@
           <div class="walking-ducklings" id="walking-ducklings" aria-hidden="true"></div>
           <button class="duck-button" id="duck-button" type="button" aria-label="Tap the rubber duck to earn one Quack Point">
             <span class="duck-shadow" aria-hidden="true"></span>
-            <svg class="duck-sprite" viewBox="0 0 32 28" role="img" aria-labelledby="duck-svg-title" shape-rendering="crispEdges">
-              <title id="duck-svg-title">A cheerful yellow pixel-art rubber duck with a rounded body, raised head, orange bill, and little feet</title>
-              <!-- One clean, readable silhouette: round body below, head above, bill facing right. -->
-              <path d="M7 16H8V13H10V10H12V7H15V5H20V6H23V8H24V11H26V12H29V13H31V16H29V17H26V19H24V22H21V24H10V23H7V21H5V18H7Z" fill="#71472c"/>
-              <path d="M8 16H9V13H11V10H13V8H15V6H20V7H22V9H23V12H25V13H28V14H30V15H28V16H25V18H23V21H20V22H10V21H8V19H6V18H8Z" fill="#ffd94f"/>
-              <!-- Warm shadow separates the body from the head without breaking the silhouette. -->
-              <path d="M7 17H10V19H13V20H20V19H23V17H25V19H23V22H20V23H10V22H7V20H6V18H7Z" fill="#efbd32"/>
-              <path d="M15 7H19V8H21V10H22V12H19V11H17V10H15Z" fill="#ffe986"/>
-              <rect x="21" y="9" width="2" height="3" fill="#71472c"/>
-              <rect x="21" y="9" width="1" height="1" fill="#fffdf2"/>
-              <path d="M24 12H28V13H30V15H28V16H24V15H23V13H24Z" fill="#ff9e46"/>
-              <path d="M11 15H14V16H17V17H20V16H22V18H20V19H14V18H11Z" fill="#f6cb43"/>
-              <!-- Two small orange feet, clearly below the body. -->
-              <path d="M10 22H14V24H13V25H9V24H8V23H10Z" fill="#f39b42" stroke="#71472c" stroke-width=".7"/>
-              <path d="M19 22H23V23H24V24H22V25H18V24H18V23H19Z" fill="#f39b42" stroke="#71472c" stroke-width=".7"/>
+            <svg class="duck-sprite" viewBox="0 0 64 56" role="img" aria-labelledby="duck-svg-title" shape-rendering="crispEdges">
+              <title id="duck-svg-title">A bright yellow pixel-art rubber duck with a red-orange bill, black pixel outline, large eye, golden wing, and orange feet</title>
+              <!-- Original pixel-art duck inspired by the supplied silhouette; no watermark or copied stock image. -->
+              <path d="M22 5H39V7H45V11H49V17H52V23H56V27H61V35H59V41H55V46H49V50H28V48H22V45H18V39H15V30H17V22H19V14H22Z" fill="#111111"/>
+              <path d="M24 7H38V9H43V13H47V18H50V25H54V29H59V34H57V40H53V44H47V48H29V46H23V43H19V38H17V30H19V23H21V16H24Z" fill="#ffd943"/>
+              <path d="M18 29H22V34H26V39H31V43H43V45H50V43H54V39H57V35H59V40H55V46H49V50H28V48H22V45H18V39H15V30H17V29Z" fill="#ffb927"/>
+              <path d="M27 8H38V10H43V13H46V17H48V22H44V20H40V18H34V16H28V19H25V15H27Z" fill="#ffe978"/>
+              <path d="M34 12H38V14H41V17H38V16H35Z" fill="#fff1a1"/>
+              <!-- Large white eye, black pupil, and a crisp glint. -->
+              <path d="M25 18H32V20H35V27H32V30H25V28H22V22H25Z" fill="#fffdf5"/>
+              <path d="M27 20H31V22H33V26H31V28H27V26H25V22H27Z" fill="#111111"/>
+              <rect x="27" y="21" width="2" height="2" fill="#fffdf5"/>
+              <!-- Bill points left, with red top and deeper red lower pixel cluster. -->
+              <path d="M16 22H23V24H28V27H24V29H18V27H12V25H9V23H16Z" fill="#111111"/>
+              <path d="M16 23H23V25H27V27H23V28H17V26H12V24H16Z" fill="#f0443e"/>
+              <path d="M12 26H18V28H24V29H18V30H13V28H10V27H12Z" fill="#d92f35"/>
+              <path d="M18 23H23V25H25V26H21V25H18Z" fill="#ff6960"/>
+              <!-- Golden wing and soft pixel highlights. -->
+              <path d="M36 30H43V32H48V35H51V39H48V42H43V44H36V42H34V38H32V34H36Z" fill="#eaa11e"/>
+              <path d="M37 31H43V33H47V35H49V38H46V41H42V42H36V39H34V35H37Z" fill="#ffcf3f"/>
+              <path d="M39 33H43V34H46V36H43V35H39Z" fill="#ffe779"/>
+              <!-- Two chunky orange feet under the body. -->
+              <path d="M25 46H31V49H29V51H22V49H24V47H25Z" fill="#111111"/>
+              <path d="M26 47H30V49H28V50H24V49H26Z" fill="#f28b2d"/>
+              <path d="M40 46H46V48H49V50H42V49H39V47H40Z" fill="#111111"/>
+              <path d="M41 47H45V48H47V49H42V48H41Z" fill="#f28b2d"/>
+              <!-- Shadow pixels on the lower body. -->
+              <path d="M20 38H23V41H28V43H36V45H29V46H23V43H20Z" fill="#efb72d"/>
             </svg>
             <span class="tap-hint" aria-hidden="true">TAP TO QUACK!</span>
           </button>
@@ -104,18 +117,24 @@
           </div>
           <div class="producer-card">
             <div class="producer-art" aria-hidden="true">
-              <svg viewBox="0 0 40 34" shape-rendering="crispEdges">
-                <!-- Oversized baby head, tiny round body, tuft, and little orange bill. -->
-                <path d="M5 22h2v-3h3v-2h5v2h5v2h4v4h-3v3H9v-2H6v-2H5z" fill="#71472c"/>
-                <path d="M7 22h2v-2h5v2h5v2h3v2h-3v2H10v-2H7v-2z" fill="#efbd32"/>
-                <path d="M12 18v-4h2V9h3V6h7V5h5v3h3v5h2v5h-3v4H19v-2h-4v-2z" fill="#71472c"/>
-                <path d="M14 17v-4h2V9h3V7h6v1h4v3h2v5h-2v3H20v-2h-4v-2z" fill="#ffe06a"/>
-                <path d="M17 7h2V4h2V7h2V3h2v4h3v2H17z" fill="#efbd32"/>
-                <path d="M29 12h4v1h3v3h-3v1h-4v-2h-1v-2h1z" fill="#ff9e46"/>
-                <rect x="25" y="10" width="2" height="3" fill="#71472c"/>
-                <rect x="25" y="10" width="1" height="1" fill="#fffdf2"/>
-                <path d="M10 27h4v2h-1v2H9v-2h1zM18 27h4v2h2v2h-6v-2z" fill="#f39b42" stroke="#71472c" stroke-width=".7"/>
-                <path d="M16 19h4v1h3v2h-5v-1h-2z" fill="#fff0a8"/>
+              <svg viewBox="0 0 64 56" shape-rendering="crispEdges">
+                <path d="M22 5H39V7H45V11H49V17H52V23H56V27H61V35H59V41H55V46H49V50H28V48H22V45H18V39H15V30H17V22H19V14H22Z" fill="#111111"/>
+                <path d="M24 7H38V9H43V13H47V18H50V25H54V29H59V34H57V40H53V44H47V48H29V46H23V43H19V38H17V30H19V23H21V16H24Z" fill="#ffd943"/>
+                <path d="M18 29H22V34H26V39H31V43H43V45H50V43H54V39H57V35H59V40H55V46H49V50H28V48H22V45H18V39H15V30H17V29Z" fill="#ffb927"/>
+                <path d="M27 8H38V10H43V13H46V17H48V22H44V20H40V18H34V16H28V19H25V15H27Z" fill="#ffe978"/>
+                <path d="M25 18H32V20H35V27H32V30H25V28H22V22H25Z" fill="#fffdf5"/>
+                <path d="M27 20H31V22H33V26H31V28H27V26H25V22H27Z" fill="#111111"/>
+                <rect x="27" y="21" width="2" height="2" fill="#fffdf5"/>
+                <path d="M16 22H23V24H28V27H24V29H18V27H12V25H9V23H16Z" fill="#111111"/>
+                <path d="M16 23H23V25H27V27H23V28H17V26H12V24H16Z" fill="#f0443e"/>
+                <path d="M12 26H18V28H24V29H18V30H13V28H10V27H12Z" fill="#d92f35"/>
+                <path d="M18 23H23V25H25V26H21V25H18Z" fill="#ff6960"/>
+                <path d="M36 30H43V32H48V35H51V39H48V42H43V44H36V42H34V38H32V34H36Z" fill="#eaa11e"/>
+                <path d="M37 31H43V33H47V35H49V38H46V41H42V42H36V39H34V35H37Z" fill="#ffcf3f"/>
+                <path d="M25 46H31V49H29V51H22V49H24V47H25Z" fill="#111111"/>
+                <path d="M26 47H30V49H28V50H24V49H26Z" fill="#f28b2d"/>
+                <path d="M40 46H46V48H49V50H42V49H39V47H40Z" fill="#111111"/>
+                <path d="M41 47H45V48H47V49H42V48H41Z" fill="#f28b2d"/>
               </svg>
             </div>
             <div class="producer-copy">
