@@ -787,3 +787,7 @@ h1 span { color: #d18a31; }
   .play-main-column .rate-info { flex-basis: 100%; display: grid; grid-template-columns: 1fr 1fr; }
   .play-layout .producer-panel { padding: 8px 6px; }
 }
+
+
+/* Hide the unaffordable-helper coaching message and reclaim its layout space. */
+.producer-panel .purchase-feedback { display: none !important; }
