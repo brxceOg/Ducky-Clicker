@@ -24,6 +24,7 @@ Ducky Clicker is a standalone rubber-duck-themed idle/clicker game made as a per
 - Do not modify, import, or depend on those projects' code, game state, save data, progression, or assets unless the owner explicitly approves a specific reuse.
 - Maintain an independent codebase, asset directory, economy, narrative, and save namespace.
 - Do not assume features from those other projects exist here.
+- The game is a **browser game**, with **iPhone Safari/mobile playability as a first-class requirement** and desktop browser support as well.
 - The game should be comfortable to play on mobile and desktop.
 - Never claim a feature is implemented, tested, committed, or deployed unless that has been verified.
 
@@ -95,12 +96,13 @@ Do not build all systems at once. Keep each implementation layer playable.
 
 ## 8. Technical and architecture principles
 
-The repository begins at pre-production. Do not assume an engine, framework, existing application, or code structure until it has been selected and verified.
+The game platform is confirmed: **browser game, playable on iPhone**. The specific framework and build tooling must be chosen only after inspecting the repository and existing files.
 
 Before implementation:
 1. Inspect the repository and current files.
-2. Confirm platform/engine and local development/run instructions.
+2. Confirm the existing stack, entry point, build tooling, and local development/run instructions.
 3. Record the chosen stack and architecture here.
+4. Verify that the game runs in a real browser and that core interactions work on iPhone-sized touch screens.
 
 Once selected, prefer:
 - One authoritative game-state model.
@@ -126,8 +128,13 @@ Avoid duplicated economy calculations, scattered magic numbers, tightly coupled 
 - Reject negative elapsed time and invalid numeric values.
 - Treat any future cloud-save system as a separately designed feature, not an assumed capability.
 
-## 10. Accessibility and UX
+## 10. Browser, iPhone, accessibility, and UX requirements
 
+- Deliver a browser game; do not switch to a native-only app without explicit approval.
+- Treat iPhone Safari and narrow touchscreens as primary supported environments, not a later polish task.
+- Use responsive layouts, touch-friendly controls, and avoid hover-only interactions.
+- Check safe-area insets where needed and ensure important controls are not obscured by browser chrome or device edges.
+- Verify scrolling, tap targets, number readability, and layout behavior at mobile widths.
 - Design for narrow phone screens first, while remaining good on desktop.
 - Make the main duck easy to tap and keep important navigation reachable.
 - Keep currency, production rate, item price, and affordability legible.
@@ -156,9 +163,23 @@ Add research, collection, events, and encyclopedia using reusable systems.
 ### Milestone 6 — Prestige and polish
 Add prestige and late-game progression after the earlier loop is stable; then balance, test, and polish.
 
-## 12. Definition of done
+## 12. Definition of done and delivery rules
 
 A feature is not done merely because code was written. Verify that it matches this document and the art direction; existing controls still work; layouts work on narrow and wide screens; economy and state changes are consistent; save/load is correct where relevant; edge cases are considered; and meaningful behavior changes are documented.
+
+**No-placeholder rule:**
+- Do not leave TODOs, stub handlers, fake buttons, empty screens, mock-only behavior, unfinished functions, or placeholder content in code presented as complete.
+- When a feature is included in a milestone, implement its full intended behavior and connect it to the real game state/UI.
+- If something genuinely cannot be completed, disclose it clearly as unfinished and do not represent the milestone as complete. Ask for a scope decision or explain the blocker instead of quietly leaving a placeholder.
+- Before calling a milestone finished, search for TODO/FIXME/stub/placeholder markers and inspect any matches. Explain any intentional remaining markers.
+
+**Commit and playable-link rule:**
+- After every implementation batch, commit the finished code to this repository and report what changed and the commit.
+- After all commits for a playable milestone are complete, provide a **direct playable URL** for testing, not just a repository or source-code link.
+- The playable URL must point to a deployed browser build that can actually be opened and tested. Do not invent a URL or call a preview playable unless deployment has been verified.
+- If deployment is not configured or cannot be completed, state that plainly and provide the exact next step needed to publish it; do not claim a playable link exists.
+- Before sharing the link, verify the deployed build loads and smoke-test the main click loop and essential controls. Test on iPhone Safari when device/browser testing is available; otherwise disclose that it still needs real-device verification.
+- Include a short test checklist with each playable link and note any known limitations.
 
 ## 13. Decision log
 
@@ -166,7 +187,9 @@ A feature is not done merely because code was written. Verify that it matches th
 - **2026-10-21:** Scope is the full duck universe, delivered incrementally.
 - **2026-10-21:** Tone is cute but increasingly unhinged.
 - **2026-10-21:** Must remain separate from Abby's Pond and Quack & Co. Industrial Complex.
-- **Pending:** Choose the engine/framework and confirm implementation structure.
+- **2026-10-21:** Platform confirmed as a browser game playable on iPhone; mobile Safari support is a first-class requirement.
+- **2026-10-21:** Implementation rule: finish included code without silent placeholders; after milestone commits, provide and verify a direct playable testing link.
+- **Pending:** Inspect repository and select/confirm the browser framework and implementation structure.
 - **Pending:** Finalize public-facing in-game title and canonical lore names.
 
 ## 14. Maintaining this document
