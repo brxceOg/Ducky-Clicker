@@ -866,3 +866,13 @@ h1 span { color: #d18a31; }
 @media (max-width: 700px) {
   .play-layout .pond-scene { border-radius: 4px; }
 }
+
+
+/* Pond polish: restrained, slow pixel-water glints; no layout or sprite movement. */
+.scene-art { display:block; width:100%; height:100%; image-rendering:pixelated; }
+.scene-art .water-glint { opacity:.72; animation: pond-glint 3.8s steps(4,end) infinite; }
+.scene-art .glint-b { animation-delay:-1.1s; }
+.scene-art .glint-c { animation-delay:-2.3s; }
+.scene-art .glint-d { animation-delay:-.6s; }
+@keyframes pond-glint { 0%,100% { opacity:.38; } 45% { opacity:.95; } 65% { opacity:.68; } }
+@media (prefers-reduced-motion: reduce) { .scene-art .water-glint { animation:none; opacity:.72; } }
