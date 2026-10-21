@@ -1,0 +1,11 @@
+{
+  "name": "ducky-clicker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A standalone pixel-art rubber-duck incremental browser game.",
+  "scripts": {
+    "test": "node --test",
+    "start": "python3 -m http.server 4173"
+  }
+}
