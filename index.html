@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f8f0d8" />
+    <meta name="description" content="A tiny rubber duck. A suspiciously big future. Start your Ducky Clicker empire." />
+    <title>Ducky Clicker</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./src/main.js"></script>
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="topbar">
+        <a class="wordmark" href="./" aria-label="Ducky Clicker home">
+          <span class="wordmark-icon" aria-hidden="true">✦</span>
+          <span>DUCKY <span class="wordmark-accent">CLICKER</span></span>
+        </a>
+        <span class="chapter-pill"><span class="status-dot" aria-hidden="true"></span> THE SQUEAKY BEGINNING</span>
+      </header>
+
+      <section class="game-content" aria-labelledby="game-title">
+        <div class="intro">
+          <p class="eyebrow">A SMALL POND. A BIG PLAN.</p>
+          <h1 id="game-title">Every empire starts<br class="mobile-break" /> with a <span>little quack.</span></h1>
+          <p class="intro-copy">Give your duck a tap. See where the quacks take you.</p>
+        </div>
+
+        <section class="currency-panel" aria-label="Your current resources">
+          <div class="currency-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" role="img">
+              <path d="M16 3 19.5 11.5 29 12 21.7 18 24 27 16 22 8 27 10.3 18 3 12 12.5 11.5Z" fill="currentColor" stroke="#8a5b20" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="currency-info">
+            <span class="currency-label">QUACK POINTS</span>
+            <strong id="quack-count" class="currency-value" aria-live="polite">0</strong>
+          </div>
+          <div class="currency-divider" aria-hidden="true"></div>
+          <div class="rate-info">
+            <span class="currency-label">PER TAP</span>
+            <strong id="tap-power" class="rate-value">+1</strong>
+          </div>
+        </section>
+
+        <section class="pond-scene" aria-label="Your rubber duck pond">
+          <div class="scene-sun" aria-hidden="true"></div>
+          <div class="cloud cloud-one" aria-hidden="true"></div>
+          <div class="cloud cloud-two" aria-hidden="true"></div>
+          <div class="scene-hill hill-back" aria-hidden="true"></div>
+          <div class="scene-hill hill-front" aria-hidden="true"></div>
+          <div class="pond-water" aria-hidden="true">
+            <span class="water-glint glint-one"></span>
+            <span class="water-glint glint-two"></span>
+            <span class="water-glint glint-three"></span>
+          </div>
+          <div class="scene-flower flower-one" aria-hidden="true">✿</div>
+          <div class="scene-flower flower-two" aria-hidden="true">✿</div>
+          <div class="scene-flower flower-three" aria-hidden="true">✿</div>
+
+          <button class="duck-button" id="duck-button" type="button" aria-label="Tap the rubber duck to earn one Quack Point">
+            <span class="duck-shadow" aria-hidden="true"></span>
+            <svg class="duck-sprite" viewBox="0 0 160 140" role="img" aria-labelledby="duck-svg-title">
+              <title id="duck-svg-title">A cheerful yellow rubber duck</title>
+              <g stroke="#71472c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M35 91c-8-1-18 1-24 8-4 5-1 11 7 12l26 1Z" fill="#f39b42"/>
+                <path d="M25 92c-2-17 10-31 28-38 7-3 12-9 14-17 3-13 17-20 30-15 11 4 16 15 13 26 20 9 34 27 34 48 0 25-24 39-61 39-34 0-58-13-58-34 0-3 0-6 1-9Z" fill="#ffd94f"/>
+                <path d="M66 38c1-11 11-18 22-17 8 1 14 7 15 14-8-4-17-3-23 2-5 4-9 9-11 15-4-3-5-8-3-14Z" fill="#ffe986" stroke="none"/>
+                <path d="M95 57c8 0 14 5 15 12" fill="none" stroke="#f0b82e" stroke-width="5"/>
+                <path d="M125 70c11-4 24-1 29 6 3 4 0 9-6 10l-25 2Z" fill="#ff9e46"/>
+                <path d="M124 78c8-3 17-2 23 2" fill="none" stroke="#e87831" stroke-width="3"/>
+                <ellipse cx="91" cy="64" rx="5" ry="7" fill="#4e392b" stroke="none"/>
+                <circle cx="92.5" cy="61.5" r="1.7" fill="#fffdf2" stroke="none"/>
+                <path d="M82 78c4 6 11 8 17 4" fill="none" stroke="#71472c" stroke-width="3"/>
+                <path d="M53 120c5 5 12 7 19 8" fill="none" stroke="#f2b82e" stroke-width="4"/>
+              </g>
+              <path d="M60 29c3-3 7-4 11-3" stroke="#fff3b6" stroke-width="4" stroke-linecap="round" fill="none"/>
+            </svg>
+            <span class="tap-hint" aria-hidden="true">TAP TO QUACK!</span>
+          </button>
+          <div class="scene-caption"><span class="caption-sparkle" aria-hidden="true">✦</span> Your very first duck <span class="caption-sparkle" aria-hidden="true">✦</span></div>
+          <div id="click-effects" class="click-effects" aria-hidden="true"></div>
+        </section>
+
+        <div class="instruction-row">
+          <span class="instruction-icon" aria-hidden="true">☝</span>
+          <p><strong>Go on, give 'em a tap.</strong><br />Every tap earns <span>+1 Quack Point.</span></p>
+        </div>
+
+        <footer class="game-footer">
+          <span>MADE OF RUBBER. POWERED BY QUACKS.</span>
+          <span class="footer-duck" aria-hidden="true">●</span>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>
