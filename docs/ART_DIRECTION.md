@@ -210,3 +210,41 @@ Before accepting an asset, verify:
 ## 14. Relationship to the source of truth
 
 [SOURCE_OF_TRUTH.md](SOURCE_OF_TRUTH.md) defines the game's purpose, systems, boundaries, and implementation priorities. This document governs visual execution. If a visual choice harms readability, accessibility, or core interaction, preserve gameplay clarity and adapt the art treatment.
+
+
+## 15. Generated asset-sheet references
+
+The generated Ducky Clicker concept sheet establishes a shared visual direction for future art production. Treat it as a **style and content reference**, not as a finished sprite atlas ready to slice directly into the game.
+
+### Asset Sheet 1 — Ducks & Buildings
+Reference categories shown:
+- Main rubber duck poses and expressions, including idle-like variations and happy/cool/pirate/rainbow treatments.
+- Special duck concepts: golden, diamond, giant, zombie, royal, space, ninja, devil, and angel ducks.
+- Producer/building concepts: duck farm, factory, warehouse, research lab, duck bank, duck tower, space station, interdimensional portal, and duck citadel.
+- Matching building-upgrade concepts.
+
+### Asset Sheet 2 — UI, Icons, Effects & Environments
+Reference categories shown:
+- Main navigation and action buttons, compact currency/HUD displays, and level/progress elements.
+- Currency concepts for Quack Points, Research Data, and Ancient Feathers.
+- Click, coin, purchase, production, level-up, and special-event effects.
+- Environment concepts spanning sunny meadow, factory, night city, space, mystic realm, and interdimensional settings.
+- Supporting items and symbols such as eggs, treasure chests, gifts, event banners, clouds, stars, hearts, speech bubbles, tooltips, cursors, badges, trophies, locks, and secrets.
+
+### Shared style rules from the sheets
+- Keep the same crisp, outlined pixel-art treatment across ducks, buildings, UI icons, effects, and backgrounds.
+- Use a warm yellow/orange duck base and a consistent dark outline; use gold for rewards, cyan/blue for research and technology, green for nature/positive feedback, and violet/indigo for cosmic or mysterious content.
+- Preserve recognizable silhouettes and readable clusters at actual mobile display sizes. Avoid relying on tiny details or color alone to distinguish an asset.
+- Keep UI buttons chunky, high-contrast, and easy to tap on iPhone. Maintain clear spacing between interactive targets.
+- Escalate from cozy nature through industrial absurdity to cosmic weirdness without changing the core pixel-art rendering style.
+- Treat the names and systems shown in the concept sheet as visual proposals, not automatic canon. Check SOURCE_OF_TRUTH.md before implementing a named gameplay system or currency.
+
+### Production and implementation cautions
+- The sheet is a mood/style guide. Do not display the entire sheet as a substitute for individual in-game assets.
+- Before shipping, create or extract individual sprites with transparent backgrounds where appropriate, consistent pixel dimensions, clean edges, and sensible filenames under the project’s asset folders.
+- Do not use the full sheet as a single clickable image or pretend its example UI is functional.
+- Review generated lettering and small details manually; generated text may be malformed. Recreate actual game text with the chosen UI font.
+- Confirm licensing/provenance and project asset-storage requirements before incorporating exported assets into a release.
+- Where a concept conflicts with gameplay clarity, mobile usability, accessibility, or the Source of Truth, those requirements take precedence.
+
+**Reference asset status:** The concept sheet was generated in this conversation on 2026-10-21. The image itself still needs to be added as a binary asset in the repository before this document can embed a durable repository image link. Do not treat a conversation attachment as a permanent repository asset.
