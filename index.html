@@ -40,6 +40,8 @@
           <div class="rate-info">
             <span class="currency-label">PER TAP</span>
             <strong id="tap-power" class="rate-value">+1</strong>
+            <span class="currency-label production-label">PER SECOND</span>
+            <strong id="production-rate" class="production-value">+0/s</strong>
           </div>
         </section>
 
@@ -80,6 +82,41 @@
           </button>
           <div class="scene-caption"><span class="caption-sparkle" aria-hidden="true">✦</span> Your very first duck <span class="caption-sparkle" aria-hidden="true">✦</span></div>
           <div id="click-effects" class="click-effects" aria-hidden="true"></div>
+        </section>
+
+        <section class="producer-panel" aria-labelledby="producer-heading">
+          <div class="producer-panel-heading">
+            <div>
+              <p class="eyebrow producer-eyebrow">YOUR FIRST EMPLOYEE</p>
+              <h2 id="producer-heading">Duckling Helpers</h2>
+            </div>
+            <span class="producer-count" id="helper-owned">OWNED: 0</span>
+          </div>
+          <div class="producer-card">
+            <div class="producer-art" aria-hidden="true">
+              <svg viewBox="0 0 32 32" shape-rendering="crispEdges">
+                <path d="M5 18h2v-4h3v-4h4V7h7v2h3v3h2v3h4v3h-4v2h-2v3H10v-2H7v-2H5z" fill="#71472c"/>
+                <path d="M7 17h2v-4h3v-4h4V8h4v2h3v3h2v3h4v1h-4v2h-2v3H11v-2H8v-2H7z" fill="#ffd94f"/>
+                <path d="M24 15h4v2h-4z" fill="#ff9e46"/>
+                <rect x="18" y="11" width="2" height="3" fill="#71472c"/>
+                <rect x="18" y="11" width="1" height="1" fill="#fffdf2"/>
+                <path d="M10 22h5v2h-1v2H9v-2h1zM20 22h4v2h2v2h-6v-2z" fill="#f39b42"/>
+                <path d="M12 4h2v2h-2zM17 3h2v3h-2zM22 5h2v2h-2z" fill="#e9b84c"/>
+              </svg>
+            </div>
+            <div class="producer-copy">
+              <h3>Duckling Helper <span class="producer-tier">#001</span></h3>
+              <p>A tiny assistant who takes their job extremely seriously.</p>
+              <div class="producer-yield"><span class="yield-dot" aria-hidden="true"></span><strong>+1 Quack Point / second</strong></div>
+            </div>
+            <div class="producer-buy-area">
+              <span class="price-label">HIRE FOR</span>
+              <strong class="producer-price" id="helper-price">10</strong>
+              <span class="price-currency">QUACK POINTS</span>
+              <button class="buy-button" id="buy-helper" type="button" disabled>Need 10 more</button>
+            </div>
+          </div>
+          <p class="purchase-feedback" id="purchase-feedback" role="status" aria-live="polite">Earn 10 Quack Points to hire your first helper.</p>
         </section>
 
         <div class="instruction-row">
