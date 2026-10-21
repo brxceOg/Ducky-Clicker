@@ -791,3 +791,50 @@ h1 span { color: #d18a31; }
 
 /* Hide the unaffordable-helper coaching message and reclaim its layout space. */
 .producer-panel .purchase-feedback { display: none !important; }
+
+
+/* The Quack Points beak opens and calls out when the player taps the duck. */
+.currency-icon.beak-icon {
+  position: relative;
+  overflow: visible;
+  color: inherit;
+}
+.beak-icon svg { overflow: visible; }
+.beak-icon .beak-upper,
+.beak-icon .beak-lower {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 120ms ease-out;
+}
+.beak-icon .beak-quack {
+  position: absolute;
+  left: 68%;
+  top: -15px;
+  z-index: 2;
+  padding: 2px 4px;
+  border: 1px solid #b86a2c;
+  border-radius: 5px;
+  background: #fff4cf;
+  color: #9a5624;
+  font-size: 8px;
+  font-weight: 1000;
+  line-height: 1;
+  letter-spacing: .2px;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translate(-2px, 5px) scale(.8);
+}
+.currency-icon.beak-icon.is-quacking .beak-upper { transform: translateY(-2px) rotate(-7deg); }
+.currency-icon.beak-icon.is-quacking .beak-lower { transform: translateY(2px) rotate(7deg); }
+.currency-icon.beak-icon.is-quacking .beak-quack { animation: beak-quack-pop 520ms ease-out both; }
+@keyframes beak-quack-pop {
+  0% { opacity: 0; transform: translate(-2px, 5px) scale(.75); }
+  18% { opacity: 1; transform: translate(0, 0) scale(1); }
+  72% { opacity: 1; transform: translate(5px, -7px) scale(1); }
+  100% { opacity: 0; transform: translate(8px, -11px) scale(.9); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .beak-icon .beak-upper, .beak-icon .beak-lower { transition: none; }
+  .currency-icon.beak-icon.is-quacking .beak-quack { animation-duration: 1ms; }
+}
