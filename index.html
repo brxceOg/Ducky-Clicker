@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#f8f0d8" />
     <meta name="description" content="A tiny rubber duck. A suspiciously big future. Start your Ducky Clicker empire." />
     <title>Ducky Clicker</title>
-    <link rel="stylesheet" href="./styles.css?v=20261021-21" />
+    <link rel="stylesheet" href="./styles.css?v=20261021-22" />
     <script type="module" src="./src/main.js?v=20261021-21"></script>
   </head>
   <body>
@@ -46,97 +46,54 @@
 
         <section class="pond-scene" aria-label="Your rubber duck pond">
           <svg class="scene-art" viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" shape-rendering="crispEdges">
-            <!-- A hand-composed orthogonal pixel scene: no diagonal strokes, gradients, or pixel-filter effects. -->
-            <rect width="640" height="400" fill="#b9e4df"/>
-            <rect y="0" width="640" height="12" fill="#c9eee5"/>
-            <!-- Block clouds -->
-            <path d="M56 58H80V46H108V54H120V62H136V74H56Z" fill="#f8f5dc"/>
-            <path d="M448 82H468V70H496V78H512V86H528V98H448Z" fill="#f8f5dc"/>
-            <rect x="64" y="78" width="64" height="4" fill="#a5d7d0"/>
-            <rect x="456" y="102" width="64" height="4" fill="#a5d7d0"/>
-            <!-- Pixel sun -->
-            <path d="M520 28H560V36H568V44H576V76H568V84H560V92H520V84H512V76H504V44H512V36H520Z" fill="#34483b"/>
-            <path d="M524 36H556V44H564V76H556V84H524V76H516V44H524Z" fill="#ffd943"/>
-            <rect x="524" y="40" width="12" height="4" fill="#fff09a"/>
-            <rect x="520" y="44" width="4" height="12" fill="#fff09a"/>
-            <rect x="552" y="72" width="8" height="4" fill="#eeb52f"/>
-            <!-- Distant forest: stepped crowns and trunks on one pixel grid -->
-            <path d="M0 196V156H20V140H40V124H68V136H84V152H104V132H128V116H156V128H172V148H192V136H212V120H240V132H256V152H276V136H304V120H332V132H348V152H368V136H392V120H420V132H436V152H456V136H480V120H508V132H524V152H548V136H572V124H600V140H620V152H640V400H0Z" fill="#3c704b"/>
-            <path d="M0 184H24V176H48V188H72V172H96V188H120V176H144V192H168V180H192V192H216V176H240V188H264V176H288V192H312V180H336V192H360V176H384V188H408V176H432V192H456V180H480V192H504V176H528V188H552V176H576V192H600V180H624V192H640V400H0Z" fill="#568b50"/>
-            <rect x="36" y="164" width="8" height="32" fill="#76563b"/>
-            <rect x="116" y="156" width="8" height="36" fill="#76563b"/>
-            <rect x="220" y="160" width="8" height="32" fill="#76563b"/>
-            <rect x="324" y="152" width="8" height="40" fill="#76563b"/>
-            <rect x="428" y="160" width="8" height="32" fill="#76563b"/>
-            <rect x="548" y="160" width="8" height="32" fill="#76563b"/>
-            <rect x="20" y="144" width="20" height="8" fill="#79b75a"/>
-            <rect x="100" y="132" width="20" height="8" fill="#79b75a"/>
-            <rect x="204" y="136" width="20" height="8" fill="#79b75a"/>
-            <rect x="308" y="132" width="20" height="8" fill="#79b75a"/>
-            <rect x="412" y="136" width="20" height="8" fill="#79b75a"/>
-            <rect x="532" y="140" width="20" height="8" fill="#79b75a"/>
-            <!-- Open grassy glade with purposeful square color clusters -->
-            <rect y="204" width="640" height="196" fill="#83bd50"/>
-            <path d="M0 212H80V204H144V212H216V204H288V212H360V204H432V212H504V204H568V212H640V400H0Z" fill="#91c957"/>
-            <rect x="20" y="236" width="28" height="8" fill="#a8db68"/>
-            <rect x="56" y="252" width="16" height="8" fill="#72b44a"/>
-            <rect x="92" y="224" width="24" height="8" fill="#b6e477"/>
-            <rect x="132" y="260" width="20" height="8" fill="#72b44a"/>
-            <rect x="468" y="228" width="28" height="8" fill="#b6e477"/>
-            <rect x="520" y="248" width="20" height="8" fill="#72b44a"/>
-            <rect x="572" y="224" width="32" height="8" fill="#a8db68"/>
-            <rect x="28" y="304" width="24" height="8" fill="#a8db68"/>
-            <rect x="72" y="328" width="16" height="8" fill="#6fac46"/>
-            <rect x="116" y="352" width="28" height="8" fill="#b6e477"/>
-            <rect x="468" y="316" width="24" height="8" fill="#a8db68"/>
-            <rect x="540" y="348" width="32" height="8" fill="#6fac46"/>
-            <rect x="592" y="304" width="20" height="8" fill="#b6e477"/>
-            <!-- Pond: clean nested stepped silhouettes, each edge follows the pixel grid -->
-            <path d="M152 244H184V236H224V228H272V236H312V228H360V236H400V244H432V260H448V284H456V324H448V344H424V360H392V368H344V376H296V368H256V360H224V344H200V328H184V304H176V276H168V260H152Z" fill="#315b3d"/>
-            <path d="M160 248H192V240H228V232H268V240H308V232H356V240H396V248H424V264H440V288H448V320H440V340H416V352H388V360H344V368H300V360H260V352H228V336H208V320H192V300H184V276H176V264H160Z" fill="#d5bc79"/>
-            <path d="M168 252H196V244H232V236H268V244H304V236H352V244H392V252H416V268H432V288H440V316H432V336H408V348H384V356H344V364H304V356H264V348H232V332H212V316H196V296H188V276H180V264H168Z" fill="#7eb84d"/>
-            <path d="M184 264H216V256H248V248H280V256H312V248H344V256H376V264H400V276H416V292H424V316H416V332H392V344H360V352H320V360H280V352H248V344H224V328H208V312H200V292H192V276H184Z" fill="#203b37"/>
-            <path d="M192 268H220V260H252V252H280V260H312V252H344V260H372V268H396V280H412V296H416V316H408V328H388V340H356V348H320V356H284V348H252V340H228V324H212V308H204V292H196V276H192Z" fill="#258fbd"/>
-            <!-- Water pixels: square reflections and darker depth clusters -->
-            <rect x="224" y="276" width="28" height="4" fill="#8ee3f0"/>
-            <rect x="220" y="280" width="16" height="4" fill="#8ee3f0"/>
-            <rect x="268" y="292" width="20" height="4" fill="#42b9e2"/>
-            <rect x="312" y="276" width="24" height="4" fill="#76d5ed"/>
-            <rect x="340" y="300" width="28" height="4" fill="#42b9e2"/>
-            <rect x="236" y="316" width="16" height="4" fill="#76d5ed"/>
-            <rect x="288" y="332" width="24" height="4" fill="#42b9e2"/>
-            <rect x="324" y="316" width="16" height="4" fill="#1476a7"/>
-            <rect x="360" y="324" width="12" height="4" fill="#1476a7"/>
-            <!-- Lily pad with square-cut notch -->
-            <path d="M360 276H376V268H388V276H400V284H388V288H372V284H360Z" fill="#315b3d"/>
-            <rect x="372" y="272" width="8" height="4" fill="#a8db68"/>
-            <rect x="380" y="276" width="8" height="4" fill="#78bd4e"/>
-            <!-- Reeds, built from stacked rectangles -->
-            <rect x="188" y="280" width="4" height="20" fill="#315b3d"/>
-            <rect x="192" y="272" width="4" height="12" fill="#315b3d"/>
-            <rect x="200" y="284" width="4" height="16" fill="#315b3d"/>
-            <rect x="196" y="276" width="4" height="12" fill="#a7d96a"/>
-            <rect x="400" y="288" width="4" height="20" fill="#315b3d"/>
-            <rect x="404" y="280" width="4" height="12" fill="#315b3d"/>
-            <rect x="412" y="292" width="4" height="16" fill="#315b3d"/>
-            <!-- Tiny flowers and clover: stepped clusters with dark outlines -->
-            <path d="M68 288H76V280H84V288H92V296H84V304H76V296H68Z" fill="#315b3d"/>
-            <rect x="76" y="284" width="8" height="12" fill="#fff0a0"/>
-            <rect x="72" y="288" width="16" height="4" fill="#fff0a0"/>
-            <rect x="80" y="288" width="4" height="4" fill="#ed7774"/>
-            <path d="M488 264H496V256H504V264H512V272H504V280H496V272H488Z" fill="#315b3d"/>
-            <rect x="496" y="260" width="8" height="12" fill="#fff0a0"/>
-            <rect x="492" y="264" width="16" height="4" fill="#fff0a0"/>
-            <rect x="500" y="264" width="4" height="4" fill="#ed7774"/>
-            <rect x="44" y="352" width="20" height="8" fill="#d7d0b1"/>
-            <rect x="76" y="356" width="12" height="8" fill="#d7d0b1"/>
-            <rect x="528" y="344" width="24" height="8" fill="#d7d0b1"/>
-            <rect x="32" y="380" width="24" height="8" fill="#4e9450"/>
-            <rect x="576" y="380" width="32" height="8" fill="#4e9450"/>
-            <rect x="28" y="372" width="8" height="8" fill="#b5df6b"/>
-            <rect x="60" y="368" width="8" height="8" fill="#b5df6b"/>
-            <rect x="560" y="368" width="8" height="8" fill="#b5df6b"/>
-            <rect x="604" y="356" width="8" height="8" fill="#b5df6b"/>
+            <!-- Carefully clustered, orthogonal pixel-art pond environment. -->
+            <rect width="640" height="400" fill="#b6ded2"/>
+            <rect y="0" width="640" height="12" fill="#c8e8d7"/>
+            <!-- distant sky and stepped clouds -->
+            <path d="M56 60H76V48H108V56H124V64H140V76H56Z" fill="#f7f0cf"/>
+            <rect x="64" y="76" width="68" height="4" fill="#a0cfc4"/>
+            <path d="M446 84H466V72H498V80H514V88H530V100H446Z" fill="#f7f0cf"/>
+            <rect x="454" y="100" width="72" height="4" fill="#a0cfc4"/>
+            <!-- warm square sun -->
+            <path d="M520 28H560V36H568V44H576V76H568V84H560V92H520V84H512V76H504V44H512V36H520Z" fill="#354b3b"/>
+            <path d="M524 36H556V44H564V76H556V84H524V76H516V44H524Z" fill="#ffd94d"/>
+            <rect x="524" y="40" width="12" height="4" fill="#fff2a0"/><rect x="520" y="44" width="4" height="12" fill="#fff2a0"/>
+            <!-- dark woodland canopy, layered with mossy pixel clusters -->
+            <path d="M0 194V150H16V134H36V118H64V126H80V142H100V126H124V110H152V122H168V142H188V130H208V114H236V126H252V146H272V130H300V114H328V126H344V146H364V130H388V114H416V126H432V146H452V130H476V114H504V126H520V146H544V130H568V118H596V134H616V150H640V400H0Z" fill="#263f3d"/>
+            <path d="M0 172H20V156H40V140H64V148H80V164H100V144H124V128H148V140H164V160H184V148H208V132H232V144H248V164H268V148H296V132H324V144H340V164H360V148H384V132H412V144H428V164H448V148H472V132H500V144H516V164H540V148H564V136H592V152H612V168H640V400H0Z" fill="#355a43"/>
+            <path d="M0 192H28V176H52V188H76V172H100V188H124V176H148V192H172V180H196V192H220V176H244V188H268V176H292V192H316V180H340V192H364V176H388V188H412V176H436V192H460V180H484V192H508V176H532V188H556V176H580V192H604V180H628V192H640V400H0Z" fill="#4e7947"/>
+            <!-- tree trunks and bright canopy facets -->
+            <rect x="36" y="156" width="8" height="40" fill="#6b4d37"/><rect x="116" y="144" width="8" height="48" fill="#6b4d37"/><rect x="220" y="148" width="8" height="44" fill="#6b4d37"/><rect x="324" y="140" width="8" height="52" fill="#6b4d37"/><rect x="428" y="148" width="8" height="44" fill="#6b4d37"/><rect x="548" y="148" width="8" height="44" fill="#6b4d37"/>
+            <path d="M16 142H36V130H60V142H72V158H16Z M96 130H116V118H140V130H152V146H96Z M200 134H220V122H244V134H256V150H200Z M304 130H324V118H348V130H360V146H304Z M408 134H428V122H452V134H464V150H408Z M528 138H548V126H572V138H584V154H528Z" fill="#6f9e4e"/>
+            <rect x="20" y="142" width="16" height="4" fill="#9fc85d"/><rect x="100" y="130" width="16" height="4" fill="#9fc85d"/><rect x="204" y="134" width="16" height="4" fill="#9fc85d"/><rect x="308" y="130" width="16" height="4" fill="#9fc85d"/><rect x="412" y="134" width="16" height="4" fill="#9fc85d"/><rect x="532" y="138" width="16" height="4" fill="#9fc85d"/>
+            <!-- lush meadow base with varied, deliberate pixel clusters -->
+            <rect y="198" width="640" height="202" fill="#78ae4b"/>
+            <path d="M0 206H72V198H136V206H208V198H280V206H352V198H424V206H496V198H568V206H640V400H0Z" fill="#8bc653"/>
+            <rect x="16" y="224" width="24" height="8" fill="#a4d765"/><rect x="48" y="244" width="12" height="4" fill="#5f9945"/><rect x="80" y="216" width="20" height="8" fill="#a4d765"/><rect x="120" y="240" width="16" height="8" fill="#6aa747"/><rect x="152" y="220" width="28" height="4" fill="#b4df75"/>
+            <rect x="456" y="220" width="24" height="8" fill="#b4df75"/><rect x="492" y="240" width="16" height="8" fill="#619d44"/><rect x="532" y="216" width="24" height="8" fill="#a4d765"/><rect x="576" y="240" width="28" height="4" fill="#b4df75"/>
+            <rect x="24" y="300" width="20" height="8" fill="#a4d765"/><rect x="64" y="324" width="16" height="4" fill="#609943"/><rect x="112" y="348" width="28" height="8" fill="#b4df75"/><rect x="472" y="316" width="20" height="8" fill="#a4d765"/><rect x="536" y="344" width="28" height="8" fill="#619d44"/><rect x="592" y="300" width="20" height="8" fill="#b4df75"/>
+            <!-- bank shadow and layered sandy shore -->
+            <path d="M128 244H160V236H200V228H248V236H288V228H336V236H376V244H416V260H440V284H448V324H440V348H416V364H376V372H328V380H280V372H240V364H208V348H184V332H168V308H160V280H152V260H128Z" fill="#293f38"/>
+            <path d="M140 248H168V240H204V232H244V240H284V232H332V240H372V248H408V264H428V288H436V320H428V344H404V356H372V364H328V372H284V364H244V356H212V340H192V324H176V304H168V280H160V264H140Z" fill="#a98256"/>
+            <path d="M148 248H176V240H208V236H244V244H284V236H328V244H368V252H400V268H420V288H428V320H420V340H396V352H368V360H328V368H288V360H248V352H216V336H196V320H180V300H172V280H164V264H148Z" fill="#d5bb79"/>
+            <path d="M156 256H184V248H212V240H244V248H280V240H324V248H364V256H396V272H412V292H420V316H412V336H392V348H360V356H324V364H288V356H252V348H224V332H204V316H188V296H180V276H172V264H156Z" fill="#6d9e4a"/>
+            <!-- pond outline and water, each silhouette made of square steps -->
+            <path d="M176 264H208V256H240V248H276V256H312V248H348V256H380V264H404V276H420V296H428V320H420V336H400V348H368V356H332V364H296V356H260V348H232V332H212V316H200V296H192V280H176Z" fill="#203b3b"/>
+            <path d="M184 268H212V260H244V252H276V260H312V252H344V260H376V268H400V280H412V300H420V320H412V332H392V344H364V352H332V360H296V352H264V344H236V328H216V312H204V292H196V280H184Z" fill="#246f91"/>
+            <path d="M192 272H220V264H248V256H280V264H312V256H344V264H372V272H392V284H408V300H412V320H404V328H388V340H360V348H328V356H296V348H264V340H240V324H220V308H208V292H200V280H192Z" fill="#2c91b0"/>
+            <path d="M208 284H232V276H260V268H292V276H324V268H352V276H376V284H392V296H400V312H392V324H376V332H348V340H316V348H288V340H260V332H240V316H224V300H216V292H208Z" fill="#48b9c1"/>
+            <!-- gentle water depth bands and crisp reflections -->
+            <rect x="224" y="280" width="32" height="4" fill="#75d6d4"/><rect x="220" y="284" width="20" height="4" fill="#75d6d4"/><rect x="260" y="292" width="24" height="4" fill="#2b87a4"/><rect x="300" y="276" width="28" height="4" fill="#82e1dc"/><rect x="336" y="292" width="32" height="4" fill="#63cfd0"/><rect x="244" y="312" width="20" height="4" fill="#82e1dc"/><rect x="280" y="328" width="28" height="4" fill="#72d9d5"/><rect x="320" y="316" width="20" height="4" fill="#287f9c"/><rect x="352" y="324" width="16" height="4" fill="#287f9c"/>
+            <rect x="236" y="300" width="12" height="4" fill="#a0ece1"/><rect x="268" y="308" width="24" height="4" fill="#a0ece1"/><rect x="320" y="300" width="16" height="4" fill="#a0ece1"/><rect x="344" y="312" width="20" height="4" fill="#a0ece1"/>
+            <!-- lily pad and shoreline plants -->
+            <path d="M360 276H376V268H388V276H400V284H388V288H372V284H360Z" fill="#315b3d"/><rect x="372" y="272" width="8" height="4" fill="#a8db68"/><rect x="380" y="276" width="8" height="4" fill="#78bd4e"/>
+            <rect x="176" y="280" width="4" height="20" fill="#315b3d"/><rect x="180" y="272" width="4" height="12" fill="#315b3d"/><rect x="188" y="284" width="4" height="16" fill="#315b3d"/><rect x="184" y="276" width="4" height="12" fill="#a7d96a"/>
+            <rect x="408" y="288" width="4" height="20" fill="#315b3d"/><rect x="412" y="280" width="4" height="12" fill="#315b3d"/><rect x="420" y="292" width="4" height="16" fill="#315b3d"/>
+            <!-- small flower clusters and stones -->
+            <path d="M68 292H76V284H84V292H92V300H84V308H76V300H68Z" fill="#315b3d"/><rect x="76" y="288" width="8" height="12" fill="#fff0a0"/><rect x="72" y="292" width="16" height="4" fill="#fff0a0"/><rect x="80" y="292" width="4" height="4" fill="#e97979"/>
+            <path d="M488 268H496V260H504V268H512V276H504V284H496V276H488Z" fill="#315b3d"/><rect x="496" y="264" width="8" height="12" fill="#fff0a0"/><rect x="492" y="268" width="16" height="4" fill="#fff0a0"/><rect x="500" y="268" width="4" height="4" fill="#e97979"/>
+            <rect x="44" y="352" width="20" height="8" fill="#b8aa82"/><rect x="76" y="356" width="12" height="8" fill="#d3c29a"/><rect x="528" y="344" width="24" height="8" fill="#b8aa82"/>
+            <rect x="32" y="380" width="24" height="8" fill="#4b8846"/><rect x="576" y="380" width="32" height="8" fill="#4b8846"/><rect x="28" y="372" width="8" height="8" fill="#b5df6b"/><rect x="60" y="368" width="8" height="8" fill="#b5df6b"/><rect x="560" y="368" width="8" height="8" fill="#b5df6b"/>
           </svg>
           <div class="walking-ducklings" id="walking-ducklings" aria-hidden="true"></div>
           <button class="duck-button" id="duck-button" type="button" aria-label="Tap the rubber duck to earn one Quack Point">
