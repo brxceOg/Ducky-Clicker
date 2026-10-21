@@ -6,8 +6,8 @@
     <meta name="theme-color" content="#f8f0d8" />
     <meta name="description" content="A tiny rubber duck. A suspiciously big future. Start your Ducky Clicker empire." />
     <title>Ducky Clicker</title>
-    <link rel="stylesheet" href="./styles.css?v=20261021-3" />
-    <script type="module" src="./src/main.js?v=20261021-3"></script>
+    <link rel="stylesheet" href="./styles.css?v=20261021-4" />
+    <script type="module" src="./src/main.js?v=20261021-4"></script>
   </head>
   <body>
     <main class="game-shell">
@@ -45,6 +45,8 @@
           </div>
         </section>
 
+        <div class="play-layout">
+          <div class="play-main-column">
         <section class="pond-scene" aria-label="Your rubber duck pond">
           <div class="scene-sun" aria-hidden="true"></div>
           <div class="cloud cloud-one" aria-hidden="true"></div>
@@ -84,6 +86,17 @@
           <div id="click-effects" class="click-effects" aria-hidden="true"></div>
         </section>
 
+        <section class="upgrades-panel" aria-labelledby="upgrades-heading">
+          <div class="upgrades-panel-heading">
+            <div><p class="eyebrow producer-eyebrow">MAKE EVERY QUACK COUNT</p><h2 id="upgrades-heading">Upgrades</h2></div>
+            <span class="upgrade-count" id="upgrade-count">0 UNLOCKED</span>
+          </div>
+          <div class="upgrade-empty-state" id="upgrade-list" aria-live="polite">
+            <span class="upgrade-lock" aria-hidden="true">✦</span>
+            <p><strong>No upgrades discovered yet</strong><span>Keep earning Quack Points. Upgrade buttons will appear here as you unlock them.</span></p>
+          </div>
+        </section>
+          </div>
         <section class="producer-panel" aria-labelledby="producer-heading">
           <div class="producer-panel-heading">
             <div>
@@ -123,6 +136,7 @@
           <p class="purchase-feedback" id="purchase-feedback" role="status" aria-live="polite">Earn 10 Quack Points to hire your first helper.</p>
         </section>
 
+        </div>
         <div class="instruction-row">
           <span class="instruction-icon" aria-hidden="true">☝</span>
           <p><strong>Go on, give 'em a tap.</strong><br />Every tap earns <span>+1 Quack Point.</span></p>
