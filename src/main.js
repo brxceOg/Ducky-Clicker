@@ -11,6 +11,7 @@ import {
 
 const state = createInitialState();
 const duckButton = document.querySelector("#duck-button");
+const tapHint = document.querySelector(".tap-hint");
 const countDisplay = document.querySelector("#quack-count");
 const tapPowerDisplay = document.querySelector("#tap-power");
 const productionRateDisplay = document.querySelector("#production-rate");
@@ -224,4 +225,8 @@ function productionLoop(now) {
 }
 
 render();
+// Hide the onboarding hint after the player has had a moment to see it.
+if (tapHint) {
+  window.setTimeout(() => tapHint.classList.add("is-hidden"), 2600);
+}
 window.requestAnimationFrame(productionLoop);
