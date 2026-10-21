@@ -693,13 +693,46 @@ h1 span { color: #d18a31; }
 .upgrade-empty-state p span { color: #93846c; font-size: 10px; line-height: 1.45; }
 @media (max-width: 700px) {
   .game-content { width: 100%; }
-  .play-layout { grid-template-columns: minmax(0, 1fr); gap: 16px; }
-  .play-main-column { gap: 14px; }
-  .play-layout .pond-scene { height: clamp(300px, 43svh, 390px); min-height: 300px; }
-  .play-layout .producer-panel { position: static; max-height: 390px; padding: 13px 11px; }
-  .play-layout .producer-card { grid-template-columns: 52px minmax(0, 1fr); }
-  .play-layout .producer-art { width: 52px; height: 58px; }
-  .play-layout .producer-art svg { width: 48px; height: 48px; }
+  /* Keep the reference's two distinct columns on phones too. */
+  .play-layout {
+    grid-template-columns: minmax(0, 1.18fr) minmax(126px, .82fr);
+    gap: 10px;
+    align-items: start;
+  }
+  .play-main-column { gap: 12px; }
+  .play-main-column > .currency-panel { padding: 10px; gap: 8px; }
+  .play-main-column .currency-icon { width: 30px; height: 30px; }
+  .play-main-column .currency-value { font-size: 25px; }
+  .play-main-column .rate-info { gap: 3px; }
+  .play-main-column .currency-label { font-size: 8px; }
+  .play-layout .pond-scene { height: clamp(260px, 40svh, 360px); min-height: 260px; }
+  .play-layout .producer-panel {
+    position: sticky;
+    top: 8px;
+    max-height: calc(100svh - 24px);
+    padding: 10px 8px;
+    overflow-y: auto;
+  }
+  .play-layout .producer-panel-heading { display: block; }
+  .play-layout .producer-panel-heading h2 { font-size: 14px; }
+  .play-layout .producer-count { display: inline-block; margin-top: 6px; }
+  .play-layout .producer-card { display: flex; flex-direction: column; align-items: stretch; gap: 8px; padding: 8px; }
+  .play-layout .producer-art { width: 100%; height: 54px; }
+  .play-layout .producer-art svg { width: 46px; height: 46px; }
+  .play-layout .producer-copy { grid-column: auto; }
+  .play-layout .producer-copy h3 { font-size: 11px; }
+  .play-layout .producer-copy p { font-size: 9px; }
+  .play-layout .producer-yield { font-size: 8px; }
+  .play-layout .producer-buy-area { display: flex; flex-direction: column; align-items: stretch; gap: 5px; }
+  .play-layout .producer-price { font-size: 19px; }
+  .play-layout .price-currency { font-size: 8px; }
+  .play-layout .buy-button { width: 100%; min-height: 38px; }
+  .play-layout .purchase-feedback { font-size: 10px; }
+  .upgrades-panel { padding: 12px; }
+  .upgrades-panel-heading { align-items: flex-start; flex-direction: column; gap: 7px; }
+  .upgrades-panel-heading h2 { font-size: 18px; }
+  .upgrade-empty-state { align-items: flex-start; flex-direction: column; padding: 10px; }
+  .upgrade-empty-state p span { font-size: 9px; }
   .instruction-row { padding-top: 14px; }
 }
 
@@ -715,4 +748,11 @@ h1 span { color: #d18a31; }
 @media (max-width: 700px) {
   .play-layout { grid-template-columns: minmax(0, 1fr); gap: 16px; }
   .play-main-column > .currency-panel { margin-bottom: 12px; }
+}
+
+@media (max-width: 380px) {
+  .play-layout { grid-template-columns: minmax(0, 1.08fr) minmax(118px, .92fr); gap: 8px; }
+  .play-main-column > .currency-panel { flex-wrap: wrap; }
+  .play-main-column .rate-info { flex-basis: 100%; display: grid; grid-template-columns: 1fr 1fr; }
+  .play-layout .producer-panel { padding: 8px 6px; }
 }
