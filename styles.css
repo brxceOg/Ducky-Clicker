@@ -283,7 +283,15 @@ h1 span { color: #d18a31; }
   font-size: 9px;
   font-weight: 900;
   letter-spacing: .12em;
-  animation: tap-hint-dismiss .45s ease 2.5s forwards;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .45s ease, visibility 0s linear .45s;
+}
+.tap-hint.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition-delay: 0s, .45s;
 }
 .duck-button:active .duck-sprite { animation: none; transform: translateY(7px) scale(.94,.91); }
 .duck-button.is-tapping .duck-sprite { animation: duck-tap .24s ease-out; }
@@ -356,11 +364,6 @@ h1 span { color: #d18a31; }
 @keyframes duck-float {
   0%, 100% { transform: translateY(0) rotate(-1deg); }
   50% { transform: translateY(-6px) rotate(1deg); }
-}
-@keyframes tap-hint-dismiss {
-  0% { opacity: 1; visibility: visible; }
-  99% { opacity: 0; visibility: visible; }
-  100% { opacity: 0; visibility: hidden; }
 }
 @keyframes duck-tap {
   0% { transform: translateY(0) scale(1); }
