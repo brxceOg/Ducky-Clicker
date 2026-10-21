@@ -247,4 +247,8 @@ Reference categories shown:
 - Confirm licensing/provenance and project asset-storage requirements before incorporating exported assets into a release.
 - Where a concept conflicts with gameplay clarity, mobile usability, accessibility, or the Source of Truth, those requirements take precedence.
 
-**Reference asset status:** The concept sheet was generated in this conversation on 2026-10-21. The image itself still needs to be added as a binary asset in the repository before this document can embed a durable repository image link. Do not treat a conversation attachment as a permanent repository asset.
+**Reference asset status:** The image is now present in the repository root as [`621595EA-086A-4ACE-9FEB-D904F96FFD14.png`](../621595EA-086A-4ACE-9FEB-D904F96FFD14.png). The filename is an automatically generated identifier; the relative link below is intentional so this document remains portable within the repository.
+
+![Ducky Clicker pixel-art asset sheet reference](../621595EA-086A-4ACE-9FEB-D904F96FFD14.png)
+
+When convenient, the file can be renamed to `ducky-clicker-asset-sheets.png`; renaming is optional because the existing asset is now linked and usable as a reference.
