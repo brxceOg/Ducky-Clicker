@@ -702,3 +702,17 @@ h1 span { color: #d18a31; }
   .play-layout .producer-art svg { width: 48px; height: 48px; }
   .instruction-row { padding-top: 14px; }
 }
+
+
+/* Layout correction: resources belong to the left play column, not across both columns. */
+.game-shell { max-width: 1240px; }
+.game-content { width: min(100%, 1160px); }
+.game-content > .intro { max-width: 740px; }
+.play-layout { grid-template-columns: minmax(0, 1.7fr) minmax(265px, .8fr); gap: 26px; align-items: start; }
+.play-main-column > .currency-panel { margin: 0 0 16px; }
+.play-main-column > .pond-scene { margin-top: 0; }
+.play-layout .producer-panel { width: 100%; }
+@media (max-width: 700px) {
+  .play-layout { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .play-main-column > .currency-panel { margin-bottom: 12px; }
+}
