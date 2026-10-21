@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#f8f0d8" />
     <meta name="description" content="A tiny rubber duck. A suspiciously big future. Start your Ducky Clicker empire." />
     <title>Ducky Clicker</title>
-    <link rel="stylesheet" href="./styles.css?v=20261021-24" />
+    <link rel="stylesheet" href="./styles.css?v=20261021-25" />
     <script type="module" src="./src/main.js?v=20261021-21"></script>
   </head>
   <body>
@@ -47,7 +47,18 @@
         <section class="pond-scene" aria-label="Your rubber duck pond">
           <svg class="scene-art" viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" shape-rendering="crispEdges">
             <!-- Carefully clustered, orthogonal pixel-art pond environment. -->
-            <rect width="640" height="400" fill="#b6ded2"/>
+            <defs>
+              <linearGradient id="pond-sky-light" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#c5e8dd"/>
+                <stop offset="1" stop-color="#9fcfc4"/>
+              </linearGradient>
+              <linearGradient id="pond-water-depth" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#398fae"/>
+                <stop offset=".52" stop-color="#43b4bd"/>
+                <stop offset="1" stop-color="#66c8c7"/>
+              </linearGradient>
+            </defs>
+            <rect width="640" height="400" fill="url(#pond-sky-light)"/>
             <rect y="0" width="640" height="12" fill="#c8e8d7"/>
             <!-- distant sky and stepped clouds -->
             <path d="M56 60H76V48H108V56H124V64H140V76H56Z" fill="#f7f0cf"/>
@@ -88,7 +99,7 @@
             <!-- pond outline and water, each silhouette made of square steps -->
             <path d="M176 264H208V256H240V248H276V256H312V248H348V256H380V264H404V276H420V296H428V320H420V336H400V348H368V356H332V364H296V356H260V348H232V332H212V316H200V296H192V280H176Z" fill="#203b3b"/>
             <path d="M184 268H212V260H244V252H276V260H312V252H344V260H376V268H400V280H412V300H420V320H412V332H392V344H364V352H332V360H296V352H264V344H236V328H216V312H204V292H196V280H184Z" fill="#246f91"/>
-            <path d="M192 272H220V264H248V256H280V264H312V256H344V264H372V272H392V284H408V300H412V320H404V328H388V340H360V348H328V356H296V348H264V340H240V324H220V308H208V292H200V280H192Z" fill="#2c91b0"/>
+            <path d="M192 272H220V264H248V256H280V264H312V256H344V264H372V272H392V284H408V300H412V320H404V328H388V340H360V348H328V356H296V348H264V340H240V324H220V308H208V292H200V280H192Z" fill="url(#pond-water-depth)"/>
             <path d="M208 284H232V276H260V268H292V276H324V268H352V276H376V284H392V296H400V312H392V324H376V332H348V340H316V348H288V340H260V332H240V316H224V300H216V292H208Z" fill="#48b9c1"/>
             <!-- Enclosed waterline glints and dark depth clusters -->
             
@@ -96,7 +107,7 @@
             
             
             <!-- gentle water depth bands and crisp reflections -->
-            <rect x="224" y="280" width="32" height="4" fill="#75d6d4"/><rect x="220" y="284" width="20" height="4" fill="#75d6d4"/><rect x="260" y="292" width="24" height="4" fill="#2b87a4"/><rect x="300" y="276" width="28" height="4" fill="#82e1dc"/><rect x="336" y="292" width="32" height="4" fill="#63cfd0"/><rect x="244" y="312" width="20" height="4" fill="#82e1dc"/><rect x="280" y="328" width="28" height="4" fill="#72d9d5"/><rect x="320" y="316" width="20" height="4" fill="#287f9c"/><rect x="352" y="324" width="16" height="4" fill="#287f9c"/>
+            <rect class="water-glint glint-a" x="224" y="280" width="32" height="4" fill="#a0ece1"/><rect x="220" y="284" width="20" height="4" fill="#75d6d4"/><rect x="260" y="292" width="24" height="4" fill="#2b87a4"/><rect class="water-glint glint-b" x="300" y="276" width="28" height="4" fill="#b1f2e4"/><rect class="water-glint glint-c" x="336" y="292" width="32" height="4" fill="#75d6d4"/><rect x="244" y="312" width="20" height="4" fill="#82e1dc"/><rect class="water-glint glint-d" x="280" y="328" width="28" height="4" fill="#a0ece1"/><rect x="320" y="316" width="20" height="4" fill="#287f9c"/><rect x="352" y="324" width="16" height="4" fill="#287f9c"/>
             <rect x="236" y="300" width="12" height="4" fill="#a0ece1"/><rect x="268" y="308" width="24" height="4" fill="#a0ece1"/><rect x="320" y="300" width="16" height="4" fill="#a0ece1"/><rect x="344" y="312" width="20" height="4" fill="#a0ece1"/>
             <!-- Fine square ripple marks, all fully enclosed within the water -->
             
@@ -112,6 +123,13 @@
             <rect x="132" y="268" width="12" height="4" fill="#9bca59"/>
             <path d="M448 280H452V272H456V268H460V276H464V272H468V284H464V288H452V284H448Z" fill="#315b3d"/>
             <rect x="452" y="280" width="12" height="4" fill="#9bca59"/>
+            <!-- Smooth pixel-stone clusters placed outside the water edge, with complete outlines -->
+            <path d="M148 304H160V300H172V304H180V312H176V320H156V316H148Z" fill="#354b43"/>
+            <path d="M152 304H160V302H172V306H176V312H172V316H156V312H152Z" fill="#9a9b7f"/>
+            <rect x="156" y="304" width="8" height="4" fill="#c5c19a"/>
+            <path d="M448 324H460V320H472V324H480V332H476V340H456V336H448Z" fill="#354b43"/>
+            <path d="M452 324H460V322H472V326H476V332H472V336H456V332H452Z" fill="#a7a68a"/>
+            <rect x="456" y="324" width="8" height="4" fill="#d1c79b"/>
             <!-- small flower clusters and stones -->
             <path d="M68 292H76V284H84V292H92V300H84V308H76V300H68Z" fill="#315b3d"/><rect x="76" y="288" width="8" height="12" fill="#fff0a0"/><rect x="72" y="292" width="16" height="4" fill="#fff0a0"/><rect x="80" y="292" width="4" height="4" fill="#e97979"/>
             <path d="M488 268H496V260H504V268H512V276H504V284H496V276H488Z" fill="#315b3d"/><rect x="496" y="264" width="8" height="12" fill="#fff0a0"/><rect x="492" y="268" width="16" height="4" fill="#fff0a0"/><rect x="500" y="268" width="4" height="4" fill="#e97979"/>
