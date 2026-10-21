@@ -6,6 +6,8 @@ A standalone rubber-duck-themed incremental browser game. The visual tone starts
 
 - Responsive, mobile-first page designed for touch and desktop pointer input.
 - A cheerful inline SVG rubber duck with tap animation.
+- Duckling Helper card uses a baby-duck sprite with a big head, tiny body, feather tuft, orange bill, and feet.
+- Every successful helper purchase spawns a matching baby duckling in the pond scene; each waddles around the grassy area, turns at the scene bounds, and stays decorative/non-interactive.
 - Quack Points counter, per-tap rewards, and floating reward feedback.
 - First producer: Duckling Helper, with a scaling Quack Point price and +1 Quack Point per second.
 - Working affordability checks, hire action, owned count, production-per-second display, and purchase confirmation animation.
