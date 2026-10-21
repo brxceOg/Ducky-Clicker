@@ -263,3 +263,10 @@ Keep this path stable so future implementation work can reliably find the refere
 ## 16. Main screen layout update
 
 The main play screen uses a two-column desktop/tablet layout: the duck tap scene sits in the upper-left play column, with an upgrades panel directly beneath it. The producer/shop panel occupies the right column as a vertically scrollable list so future producers can be added without making the play area excessively tall. On narrow screens, the columns stack into a single readable touch-friendly flow. The upgrades panel has a clear empty state until real upgrade definitions and unlock logic are implemented; it must not display fake purchasable controls.
+
+
+## 17. Main duck sprite refresh
+
+- **2026-10-21:** Replaced the original right-facing simplified duck with a new, original left-facing pixel-art rubber duck inspired by the user's visual reference: sunny yellow body, chunky black pixel outline, white-and-black eye, red-orange bill, golden wing, and orange feet.
+- Reused the same sprite design for the Duckling Helper purchase icon and spawned walking helpers so all ducks share one visual identity.
+- The uploaded stock image is a visual reference only; the game uses newly authored inline SVG artwork and does not include the Shutterstock watermark.
