@@ -750,9 +750,23 @@ h1 span { color: #d18a31; }
   .game-shell { padding-left: 10px; padding-right: 10px; }
   .game-content { width: 100%; }
   .play-layout {
-    grid-template-columns: minmax(0, 1.12fr) minmax(124px, .88fr);
+    display: grid;
+    width: 100%;
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
     gap: 10px;
     align-items: stretch;
+  }
+  .play-layout,
+  .play-main-column,
+  .play-layout .producer-panel,
+  .play-main-column > * {
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  .play-layout .producer-panel {
+    justify-self: stretch;
+    align-self: start;
+    -webkit-overflow-scrolling: touch;
   }
   .play-main-column { min-width: 0; gap: 12px; }
   .play-main-column > .currency-panel { margin-bottom: 0; }
@@ -768,7 +782,7 @@ h1 span { color: #d18a31; }
 }
 
 @media (max-width: 380px) {
-  .play-layout { grid-template-columns: minmax(0, 1.05fr) minmax(112px, .95fr); gap: 7px; }
+  .play-layout { grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 7px; }
   .play-main-column > .currency-panel { flex-wrap: wrap; }
   .play-main-column .rate-info { flex-basis: 100%; display: grid; grid-template-columns: 1fr 1fr; }
   .play-layout .producer-panel { padding: 8px 6px; }
