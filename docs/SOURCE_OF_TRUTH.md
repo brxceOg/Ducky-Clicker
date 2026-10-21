@@ -96,13 +96,22 @@ Do not build all systems at once. Keep each implementation layer playable.
 
 ## 8. Technical and architecture principles
 
-The game platform is confirmed: **browser game, playable on iPhone**. The specific framework and build tooling must be chosen only after inspecting the repository and existing files.
+The game platform is confirmed: **browser game, playable on iPhone**. Repository inspection on 2026-10-21 found no existing application entry point, package manifest, or framework; the repository initially contained the planning documents and art reference only. The first foundation therefore uses **dependency-free HTML, CSS, and native JavaScript ES modules**, with no bundler or framework.
 
-Before implementation:
-1. Inspect the repository and current files.
-2. Confirm the existing stack, entry point, build tooling, and local development/run instructions.
-3. Record the chosen stack and architecture here.
-4. Verify that the game runs in a real browser and that core interactions work on iPhone-sized touch screens.
+Current implementation structure:
+- `index.html` — accessible page structure and inline SVG main duck.
+- `styles.css` — responsive pixel-inspired presentation, touch-friendly interaction, and reduced-motion support.
+- `src/main.js` — DOM interaction, rendering, and tap feedback.
+- `src/game-state.js` — pure initial-state, reward, and number-formatting logic.
+- `tests/game-state.test.js` — Node's built-in test runner for core state behavior.
+- `package.json` — `npm test` and a local static server command (`npm start`, requiring Python 3).
+- `assets/reference/ducky-clicker-asset-sheets.png` — visual concept reference, not a finished sprite atlas.
+
+Before the first playable milestone is declared complete:
+1. Run the automated tests and check the browser console and network behavior.
+2. Verify the page and repeated duck taps in a real browser at mobile and desktop widths.
+3. Test on iPhone Safari if a real device is available; otherwise explicitly state that device verification remains outstanding.
+4. Configure and verify a deployment before sharing any public playable URL.
 
 Once selected, prefer:
 - One authoritative game-state model.
@@ -189,7 +198,7 @@ A feature is not done merely because code was written. Verify that it matches th
 - **2026-10-21:** Must remain separate from Abby's Pond and Quack & Co. Industrial Complex.
 - **2026-10-21:** Platform confirmed as a browser game playable on iPhone; mobile Safari support is a first-class requirement.
 - **2026-10-21:** Implementation rule: finish included code without silent placeholders; after milestone commits, provide and verify a direct playable testing link.
-- **Pending:** Inspect repository and select/confirm the browser framework and implementation structure.
+- **2026-10-21:** Repository inspected; no prior app/framework existed. Began the foundation with native HTML/CSS/JavaScript ES modules and Node's built-in test runner; this is the initial stack, not a permanent lock-in.
 - **Pending:** Finalize public-facing in-game title and canonical lore names.
 
 ## 14. Maintaining this document
