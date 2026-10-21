@@ -258,3 +258,8 @@ Reference categories shown:
 ![Ducky Clicker pixel-art asset sheet reference](../assets/reference/ducky-clicker-asset-sheets.png)
 
 Keep this path stable so future implementation work can reliably find the reference.
+
+
+## 16. Main screen layout update
+
+The main play screen uses a two-column desktop/tablet layout: the duck tap scene sits in the upper-left play column, with an upgrades panel directly beneath it. The producer/shop panel occupies the right column as a vertically scrollable list so future producers can be added without making the play area excessively tall. On narrow screens, the columns stack into a single readable touch-friendly flow. The upgrades panel has a clear empty state until real upgrade definitions and unlock logic are implemented; it must not display fake purchasable controls.
